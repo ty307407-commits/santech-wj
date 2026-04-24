@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電車・車両 施工事例一覧 | 株式会社サンテック</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif; background: #F0F9FF; }
+
+.site-header {
+  background: #0f2a6b;
+  padding: 14px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo { color: white; font-size: 18px; font-weight: 800; text-decoration: none; }
+.logo span { color: #38BDF8; }
+.site-header nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; margin-left: 24px; }
+
+/* breadcrumb → hero内に統合 */
+
+
+/* ══ HERO（リデザイン）══ */
+.hero{
+  position:relative;
+  padding:100px 52px 72px;
+  overflow:hidden;
+  background:#04090f;
+  min-height:300px;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-bg-glow{
+  position:absolute;top:-20%;right:-5%;width:600px;height:500px;pointer-events:none;
+  background:radial-gradient(circle,rgba(56,189,248,0.09) 0%,transparent 65%);
+}
+.hero-bg-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:120px;pointer-events:none;
+  background:linear-gradient(to bottom,transparent,#eef4fb);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:18px;
+}
+.badge-line{width:28px;height:1px;background:#38BDF8;}
+.badge-text{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:4px;
+  color:#38BDF8;text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Barlow Condensed','Noto Sans JP',sans-serif;
+  font-size:clamp(36px,4.5vw,64px);font-weight:900;
+  color:#fff;line-height:1.05;letter-spacing:-0.5px;
+  margin-bottom:18px;
+}
+.hero p{
+  font-size:14px;color:rgba(255,255,255,0.6);
+  line-height:1.9;max-width:520px;
+}
+.hero-stats{display:flex;gap:16px;}
+.stat{
+  padding:20px 24px;
+  border:1px solid rgba(56,189,248,0.18);
+  border-radius:10px;
+  background:rgba(56,189,248,0.05);
+  backdrop-filter:blur(8px);
+  text-align:center;min-width:100px;
+}
+.stat .n{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:40px;font-weight:900;
+  color:#38BDF8;line-height:1;
+}
+.stat .l{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.5px;}
+
+/* breadcrumbをヒーロー上部に統合 */
+.breadcrumb{
+  position:absolute;top:24px;left:52px;z-index:3;
+  font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.5px;
+}
+.breadcrumb a{color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+.breadcrumb a:hover{color:#38BDF8;}
+.breadcrumb span{margin:0 6px;}
+
+
+.main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  color:#0f172a;text-decoration:none;font-size:12px;font-weight:700;
+  margin-bottom:32px;padding:9px 18px;letter-spacing:0.5px;
+  border-radius:6px;background:#fff;
+  border:1px solid rgba(15,23,42,0.1);
+  box-shadow:0 2px 8px rgba(15,23,42,0.06);
+  transition:all 0.2s;
+}
+.back-btn:hover{
+  border-color:rgba(56,189,248,0.4);
+  box-shadow:0 4px 16px rgba(56,189,248,0.1);
+  color:#0369a1;
+}
+.back-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+.grid-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;color:#38BDF8;
+  letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.grid-label::before{content:'';display:block;width:20px;height:1px;background:#38BDF8;}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+
+.case-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 14px rgba(15,42,107,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(15,42,107,0.16);
+}
+
+.case-thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #E2E8F0;
+  position: relative;
+}
+.case-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.case-card:hover .case-thumb img { transform: scale(1.04); }
+
+.case-thumb .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(15,42,107,0.55), transparent 55%);
+}
+.photo-count {
+  position: absolute;
+  bottom: 10px; right: 12px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 11px; font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.provisional-badge {
+  position: absolute;
+  top: 10px; left: 12px;
+  background: rgba(245,158,11,0.9);
+  color: white;
+  font-size: 10px; font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.case-body {
+  padding: 18px 20px 20px;
+  flex: 1; display: flex; flex-direction: column;
+}
+.case-num { font-size: 10px; font-weight: 700; color: #38BDF8; letter-spacing: 1.5px; margin-bottom: 6px; }
+.case-title { font-size: 16px; font-weight: 800; color: #0f2a6b; margin-bottom: 8px; line-height: 1.4; }
+.case-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.tag {
+  background: #F0F9FF; border: 1px solid #BAE6FD;
+  color: #0369A1; font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 5px;
+}
+.case-meta { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.meta-row { display: flex; gap: 8px; align-items: baseline; }
+.meta-key { font-size: 10px; color: #94A3B8; font-weight: 600; min-width: 64px; }
+.meta-val { font-size: 12px; color: #334155; font-weight: 500; }
+
+.case-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #F1F5F9;
+  margin-top: auto;
+}
+.cta-text { font-size: 12px; font-weight: 700; color: #94A3B8; }
+.cta-icon {
+  width: 28px; height: 28px;
+  background: #F1F5F9; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #94A3B8; font-size: 14px;
+  opacity: 0.4;
+}
+
+.case-card.placeholder {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.case-card.placeholder .case-thumb {
+  background: linear-gradient(135deg, #DBEAFE, #E0F2FE);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 52px;
+}
+
+/* Lightbox */
+#lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:1000; flex-direction:column; align-items:center; justify-content:center; }
+#lightbox.active { display:flex; }
+#lb-close { position:fixed; top:20px; right:24px; color:white; font-size:32px; cursor:pointer; z-index:1010; opacity:0.7; user-select:none; }
+#lb-close:hover { opacity:1; }
+#lb-img { max-width:90vw; max-height:85vh; object-fit:contain; border-radius:6px; box-shadow:0 8px 48px rgba(0,0,0,0.5); }
+#lb-caption { color:rgba(255,255,255,0.7); font-size:13px; margin-top:14px; }
+#lb-prev,#lb-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.12); border:none; color:white; font-size:24px; width:48px; height:48px; border-radius:50%; cursor:pointer; z-index:1010; display:flex; align-items:center; justify-content:center; }
+#lb-prev { left:16px; } #lb-next { right:16px; }
+#lb-prev:hover,#lb-next:hover { background:rgba(255,255,255,0.25); }
+
+/* ══ GOOGLE FONTS ══ */
+/* (loaded via <link> in <head>) */
+
+/* ══ HEADER ══ */
+
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover{color:#38BDF8;}
+.nav-mobile .nav-cta-m{color:#38BDF8!important;border:1px solid #38BDF8;padding:14px 48px;border-radius:4px;}
+@media(max-width:760px){.nav-hamburger{display:flex;}.hdr-nav{display:none;}.hdr{padding:12px 16px;}}
+
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;transition:all 0.5s;background:rgba(10,22,48,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.12);}
+.hdr-logo{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;font-size:19px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:1px;white-space:nowrap;}
+.hdr-logo b{color:#38BDF8;}
+.hdr-nav{display:flex;align-items:center;gap:28px;}
+.hdr-nav a{color:rgba(255,255,255,0.80);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+.hdr-nav a:hover{color:#38BDF8;}
+.hdr-nav .nav-cta{color:#38BDF8!important;border:1px solid #38BDF8;padding:8px 20px;border-radius:4px;transition:background 0.2s!important;}
+.hdr-nav .nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+body{padding-top:72px;}
+
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a class="hdr-logo" href="santech_top.html"><b>SUN</b>TECH　株式会社サンテック</a>
+  <nav class="hdr-nav">
+    <a href="santech_company.html">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html">WORKS</a>
+    <a href="santech_recruit.html">RECRUIT</a>
+    <a href="santech_top.html#cta" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+
+
+
+<div class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-bottom"></div>
+  <div class="breadcrumb"><a href="santech_施工事例.html">施工事例</a> <span>›</span> 電車・車両</div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="badge-line"></span><span class="badge-text">CATEGORY 09</span></div>
+      <h1>電車・車両</h1>
+      <p>鉄道車両・バス・産業車両の洗浄・塗膜剥離・メンテナンス前処理。ウォータージェット工法で車両の美観回復と防錆処理前下地を提供します。</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">6</div><div class="l">施工事例</div></div>
+      <div class="stat"><div class="n">8+</div><div class="l">施工写真</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <a class="back-btn" href="santech_施工事例.html"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> 施工事例トップに戻る</a>
+
+  <div class="grid-label">施工事例一覧 — 詳細ページは順次公開予定です</div>
+
+  <div class="cases-grid">
+    <!-- CASE 01: 鉄道車両<br>洗浄・塗膜剥離 (暫定) -->
+    <div class="case-card" style="cursor:pointer;" onclick="openLb(0)">
+      <div class="case-thumb">
+        <img
+          src="https://drive.google.com/thumbnail?id=1voqQnIlDMMJTvOeLVR5N5CFae8SJcMqs&sz=w600"
+          alt="鉄道車両 洗浄・塗膜剥離"
+          onerror="this.style.display='none';"
+        />
+        <div class="overlay"></div>
+        <div class="photo-count">📷 8枚</div>
+        <div class="provisional-badge">⚠ 暫定掲載</div>
+      </div>
+      <div class="case-body">
+        <div class="case-num">CASE 01</div>
+        <div class="case-title">鉄道車両<br>洗浄・塗膜剥離</div>
+        <div class="case-tags">
+          <span class="tag">車両洗浄</span>
+          <span class="tag">電車</span>
+          <span class="tag">塗膜剥離</span>
+        </div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">施工場所</span><span class="meta-val">九州・沖縄</span></div>
+          <div class="meta-row"><span class="meta-key">施工工法</span><span class="meta-val">高圧ウォータージェット工法</span></div>
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val" style="color:#F59E0B;">写真のみ暫定掲載・詳細は山下様に確認</span></div>
+        </div>
+        <div class="case-cta">
+          <span class="cta-text" style="color:#38BDF8;">写真を拡大表示する</span>
+          <span class="cta-icon" style="background:#F0F9FF;color:#38BDF8;opacity:1;">🔍</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Placeholder -->
+    <div class="case-card placeholder">
+      <div class="case-thumb">🚃</div>
+      <div class="case-body">
+        <div class="case-num">CASE 02</div>
+        <div class="case-title">事例追加予定</div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val">山下様より資料収集中</span></div>
+        </div>
+        <div class="case-cta"><span class="cta-text">準備中</span><span class="cta-icon">→</span></div>
+      </div>
+    </div>
+    <!-- Placeholder -->
+    <div class="case-card placeholder">
+      <div class="case-thumb">🚃</div>
+      <div class="case-body">
+        <div class="case-num">CASE 03</div>
+        <div class="case-title">事例追加予定</div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val">山下様より資料収集中</span></div>
+        </div>
+        <div class="case-cta"><span class="cta-text">準備中</span><span class="cta-icon">→</span></div>
+      </div>
+    </div>
+    <!-- Placeholder -->
+    <div class="case-card placeholder">
+      <div class="case-thumb">🚃</div>
+      <div class="case-body">
+        <div class="case-num">CASE 04</div>
+        <div class="case-title">事例追加予定</div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val">山下様より資料収集中</span></div>
+        </div>
+        <div class="case-cta"><span class="cta-text">準備中</span><span class="cta-icon">→</span></div>
+      </div>
+    </div>
+    <!-- Placeholder -->
+    <div class="case-card placeholder">
+      <div class="case-thumb">🚃</div>
+      <div class="case-body">
+        <div class="case-num">CASE 05</div>
+        <div class="case-title">事例追加予定</div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val">山下様より資料収集中</span></div>
+        </div>
+        <div class="case-cta"><span class="cta-text">準備中</span><span class="cta-icon">→</span></div>
+      </div>
+    </div>
+    <!-- Placeholder -->
+    <div class="case-card placeholder">
+      <div class="case-thumb">🚃</div>
+      <div class="case-body">
+        <div class="case-num">CASE 06</div>
+        <div class="case-title">事例追加予定</div>
+        <div class="case-meta">
+          <div class="meta-row"><span class="meta-key">状態</span><span class="meta-val">山下様より資料収集中</span></div>
+        </div>
+        <div class="case-cta"><span class="cta-text">準備中</span><span class="cta-icon">→</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="lightbox">
+  <span id="lb-close">✕</span>
+  <button id="lb-prev">‹</button>
+  <img id="lb-img" src="" alt="" />
+  <div id="lb-caption"></div>
+  <button id="lb-next">›</button>
+</div>
+
+<script>
+// All photos across all provisional cases
+const allPhotos = [{"id": "1voqQnIlDMMJTvOeLVR5N5CFae8SJcMqs", "cap": "電車・車両｜写真 1"}, {"id": "13ZaM3iwhjdQi5vzjmRs_I9itzg-wO245", "cap": "電車・車両｜写真 2"}, {"id": "1IrT8khdOIEmASCvtyJ-2ysg0lILd2v6l", "cap": "電車・車両｜写真 3"}, {"id": "1oV9nfgimuxzfRdwrcvUiC5IRJvcmyJMW", "cap": "電車・車両｜写真 4"}, {"id": "1X0xKyeygMYbYT74NZQLC1SyiwRmyaa2f", "cap": "電車・車両｜写真 5"}, {"id": "19k4kgJT04fKr1jR7qqSIVcO_y7fFcKwQ", "cap": "電車・車両｜写真 6"}, {"id": "1--knOducebQzFlkk4cpK44MR2ZqJK2Gt", "cap": "電車・車両｜写真 7"}, {"id": "1ajLXrPMkgNWE0CLlmgcBwfaPmptf2ek8", "cap": "電車・車両｜写真 8"}];
+
+let lbIdx=0;
+function openLb(i){ lbIdx=i; updateLb(); document.getElementById('lightbox').classList.add('active'); document.body.style.overflow='hidden'; }
+function closeLb(){ document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow=''; }
+function updateLb(){
+  document.getElementById('lb-img').src=`https://drive.google.com/thumbnail?id=${allPhotos[lbIdx].id}&sz=w1200`;
+  document.getElementById('lb-caption').textContent=allPhotos[lbIdx].cap;
+}
+document.getElementById('lb-close').onclick=closeLb;
+document.getElementById('lb-prev').onclick=()=>{ lbIdx=(lbIdx-1+allPhotos.length)%allPhotos.length; updateLb(); };
+document.getElementById('lb-next').onclick=()=>{ lbIdx=(lbIdx+1)%allPhotos.length; updateLb(); };
+document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeLb(); });
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('active')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowLeft'){ lbIdx=(lbIdx-1+allPhotos.length)%allPhotos.length; updateLb(); }
+  if(e.key==='ArrowRight'){ lbIdx=(lbIdx+1)%allPhotos.length; updateLb(); }
+});
+
+// Attach lightbox click to provisional photo cards
+document.querySelectorAll('.prov-photo').forEach((el,i)=>{
+  el.addEventListener('click',()=>openLb(parseInt(el.dataset.idx)));
+});
+</script>
+<script>
+(function(){
+  var h=document.getElementById('hdr');
+  if(!h) return;
+  function upd(){h.classList.toggle('on', window.scrollY>40);}
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+
+function closeMobileNav(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('navMobile').classList.remove('open');
+}
+document.getElementById('hamburger').addEventListener('click',()=>{
+  const isOpen=document.getElementById('navMobile').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open',isOpen);
+});
+</script>
+</body>
+</html>

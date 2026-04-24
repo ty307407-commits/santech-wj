@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施工事例 | 株式会社サンテック</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Hiragino Sans', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  background: #F0F9FF;
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  background: #0f2a6b;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-header .logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.site-header .logo span {
+  color: #38BDF8;
+}
+.site-header nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 24px;
+  transition: color 0.15s;
+}
+.site-header nav a:hover { color: #38BDF8; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f2a6b 0%, #1e40af 100%);
+  padding: 48px 32px 40px;
+  text-align: center;
+  color: white;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(56,189,248,0.25);
+  color: #7DD3FC;
+  border: 1px solid rgba(56,189,248,0.4);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.hero p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Main content */
+.main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+/* Category count */
+.section-label {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* Category grid */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.cat-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(15,42,107,0.08);
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(15,42,107,0.14);
+}
+
+.cat-thumb {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: #E2E8F0;
+  position: relative;
+}
+.cat-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.cat-card:hover .cat-thumb img {
+  transform: scale(1.04);
+}
+
+/* Placeholder for categories without photos yet */
+.cat-thumb.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #DBEAFE, #E0F2FE);
+}
+.placeholder-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.cat-body {
+  padding: 18px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cat-number {
+  font-size: 10px;
+  font-weight: 700;
+  color: #38BDF8;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.cat-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f2a6b;
+  margin-bottom: 6px;
+}
+.cat-desc {
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 14px;
+}
+.cat-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cat-count {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 600;
+}
+.cat-count strong {
+  color: #0f2a6b;
+  font-size: 14px;
+}
+.cat-arrow {
+  width: 28px;
+  height: 28px;
+  background: #F0F9FF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38BDF8;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.cat-card:hover .cat-arrow {
+  background: #38BDF8;
+  color: white;
+}
+
+/* Coming soon badge */
+.coming-soon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(30,64,175,0.85);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* Back to map button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f2a6b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(15,42,107,0.08);
+  transition: box-shadow 0.15s;
+}
+.back-btn:hover {
+  box-shadow: 0 3px 12px rgba(15,42,107,0.12);
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#" class="logo">SUN<span>TECH</span> 株式会社サンテック</a>
+  <nav>
+    <a href="#">会社情報</a>
+    <a href="#">工法・技術</a>
+    <a href="#">施工事例</a>
+    <a href="#">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="badge">CASE STUDIES</div>
+  <h1>施工事例</h1>
+  <p>超高圧水によるウォータージェット工法で、日本全国のインフラ施設・建築物の維持管理を支えています。施設カテゴリを選んで詳細をご覧ください。</p>
+</div>
+
+<div class="main">
+
+  <a class="back-btn" href="santech_map_interactive.html">← 施工対応マップに戻る</a>
+
+  <div class="section-label">全9カテゴリ — クリックで施工事例一覧へ</div>
+
+  <div class="categories">
+
+    <!-- 1. 上下水道施設 -->
+    <a class="cat-card" href="santech_cases_suido.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🏭</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 01</div>
+        <div class="cat-title">上下水道施設</div>
+        <div class="cat-desc">処理槽・貯水タンクのコンクリート劣化除去。ロボットが入れない複雑な内部構造にもハンドガンで対応。全国トップクラスの実績。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. 新築建物 — 写真あり -->
+    <a class="cat-card" href="santech_cases_newbuild.html">
+      <div class="cat-thumb">
+        <img
+          src="https://drive.google.com/thumbnail?id=1ROl-dFER7w0_XgMx62XUeOxa9AiZbZKg&sz=w600"
+          alt="新築建物 施工事例"
+          onerror="this.parentElement.classList.add('placeholder');this.style.display='none';"
+        />
+      </div>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 02</div>
+        <div class="cat-title">新築建物・建築外壁</div>
+        <div class="cat-desc">銀行・商業施設・公共建築物の外壁コンクリート表面処理、型枠剥離、仕上げ前下地作り。ハイブリッドピーリング工法にも対応。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>2</strong> 件</div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3. 橋脚・橋梁 -->
+    <a class="cat-card" href="santech_cases_bridge.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🌉</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 03</div>
+        <div class="cat-title">橋脚・橋梁</div>
+        <div class="cat-desc">高速道路・橋梁の床版剥離、橋脚コンクリート劣化除去。耐震補強前の確実な下地作りを手がけています。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4. 道路工事 -->
+    <a class="cat-card" href="santech_cases_road.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🛣️</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 04</div>
+        <div class="cat-title">道路工事</div>
+        <div class="cat-desc">路面の劣化コンクリート除去・防水下地処理。超高圧水による精密な表面切削で交通インフラの長寿命化に貢献します。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. ダム・水門 -->
+    <a class="cat-card" href="santech_cases_dam.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🏞️</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 05</div>
+        <div class="cat-title">ダム・水門</div>
+        <div class="cat-desc">ダム堤体・水門のコンクリート表面処理、劣化除去。大型インフラ構造物の維持・補修に欠かせない下地作りを担います。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6. 発電所 -->
+    <a class="cat-card" href="santech_cases_power.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">⚡</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 06</div>
+        <div class="cat-title">発電所</div>
+        <div class="cat-desc">発電プラントの洗浄・塗膜除去。地熱・火力など各種エネルギー施設での施工実績。火気厳禁の現場でも安全に対応。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 7. 船・港湾 -->
+    <a class="cat-card" href="santech_cases_ship.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🚢</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 07</div>
+        <div class="cat-title">船・港湾</div>
+        <div class="cat-desc">船体の塗膜剥離、造船所設備の洗浄。塩害・海洋環境下でも確実に対応できる技術と実績を持っています。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 8. 電車・車両 -->
+    <a class="cat-card" href="santech_cases_train.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🚃</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 08</div>
+        <div class="cat-title">電車・車両</div>
+        <div class="cat-desc">JR等の鉄道車両の塗膜剥離、鉄道施設の洗浄・表面処理。超高圧水によるスピーディかつ確実な施工が強みです。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 9. プラント・工場 -->
+    <a class="cat-card" href="santech_cases_plant.html">
+      <div class="cat-thumb placeholder">
+        <div class="placeholder-icon">🏗️</div>
+      </div>
+      <span class="coming-soon">準備中</span>
+      <div class="cat-body">
+        <div class="cat-number">CATEGORY 09</div>
+        <div class="cat-title">プラント・工場</div>
+        <div class="cat-desc">ガスタンク解体・切断（火気厳禁環境）、配管・設備洗浄。複雑なプラント環境での高リスク施工に多数の実績があります。</div>
+        <div class="cat-meta">
+          <div class="cat-count">施工事例 <strong>準備中</strong></div>
+          <div class="cat-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
