@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="RC橋脚の塩害劣化によるコンクリート表面処理事例。超高圧ウォータージェット工法（280MPa）で劣化層を除去し、補修材の付着強度を確保。施工面積620㎡・工期12日。株式会社サンテック（福岡県北九州市）の施工実績。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RC橋脚 塩害劣化層除去・補修前処理 | 橋脚・橋梁 施工事例 | 株式会社サンテック</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:#F0F9FF;padding-top:72px;}
+
+/* ══ HEADER ══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;transition:all 0.5s;background:rgba(10,22,48,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.12);}
+.hdr-logo{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;font-size:19px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:1px;}
+.hdr-logo b{color:#38BDF8;}
+.hdr-nav{display:flex;align-items:center;gap:28px;}
+.hdr-nav a{color:rgba(255,255,255,0.80);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+.hdr-nav a:hover,.hdr-nav a.active{color:#38BDF8;}
+.hdr-nav .nav-cta{color:#38BDF8!important;border:1px solid #38BDF8;padding:8px 20px;border-radius:4px;}
+.hdr-nav .nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover{color:#38BDF8;}
+.nav-mobile .nav-cta-m{color:#38BDF8!important;border:1px solid #38BDF8;padding:14px 48px;border-radius:4px;}
+@media(max-width:760px){.nav-hamburger{display:flex;}.hdr-nav{display:none;}.hdr{padding:12px 16px;}}
+
+/* ══ BREADCRUMB ══ */
+.breadcrumb{background:#fff;padding:10px 40px;font-size:12px;color:#94A3B8;border-bottom:1px solid #E2E8F0;}
+.breadcrumb a{color:#64748B;text-decoration:none;}
+.breadcrumb a:hover{color:#0f2a6b;}
+.breadcrumb span{margin:0 5px;}
+
+/* ══ HERO ══ */
+.hero{background:linear-gradient(135deg,#04090f 0%,#0f2a6b 100%);padding:44px 40px 36px;color:#fff;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.badge{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;}
+.badge-pill{background:rgba(56,189,248,0.18);color:#7DD3FC;border:1px solid rgba(56,189,248,0.3);font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:999px;font-family:'Barlow Condensed',sans-serif;}
+.hero h1{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:900;line-height:1.15;margin-bottom:18px;letter-spacing:-0.5px;}
+.hero h1 span{color:#38BDF8;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:24px;}
+.hmi{display:flex;flex-direction:column;gap:3px;}
+.hml{font-size:9px;color:rgba(255,255,255,0.45);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.hmv{font-size:14px;color:rgba(255,255,255,0.92);font-weight:600;}
+
+/* ══ MAIN ══ */
+.main{max-width:1100px;margin:0 auto;padding:32px 24px 72px;}
+
+.back-btn{display:inline-flex;align-items:center;gap:7px;color:#0f172a;text-decoration:none;font-size:12px;font-weight:700;margin-bottom:28px;padding:9px 18px;border-radius:6px;background:#fff;border:1px solid rgba(15,23,42,0.1);box-shadow:0 2px 8px rgba(15,23,42,0.06);transition:all 0.2s;}
+.back-btn:hover{border-color:rgba(56,189,248,0.4);box-shadow:0 4px 16px rgba(56,189,248,0.1);color:#0369a1;}
+.back-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ══ LAYOUT ══ */
+.layout{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+
+/* ══ LEFT COLUMN ══ */
+.content-col{display:flex;flex-direction:column;gap:20px;}
+
+/* Summary */
+.summary-box{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 2px 14px rgba(15,42,107,0.07);}
+.summary-box h2{font-size:16px;font-weight:800;color:#0f2a6b;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid #38BDF8;}
+.summary-box p{font-size:14px;color:#334155;line-height:1.9;}
+.summary-box p+p{margin-top:10px;}
+
+/* Before/After */
+.ba-box{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(15,42,107,0.07);}
+.ba-header{padding:16px 20px 12px;border-bottom:1px solid #F1F5F9;}
+.ba-header h2{font-size:14px;font-weight:800;color:#0f2a6b;}
+.ba-header p{font-size:11px;color:#64748B;margin-top:3px;}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;}
+.ba-item{position:relative;aspect-ratio:4/3;overflow:hidden;background:#E2E8F0;cursor:pointer;}
+.ba-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s;}
+.ba-item:hover img{transform:scale(1.05);}
+.ba-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(to top,rgba(15,42,107,0.75),transparent);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;}
+.ba-label.after{background:linear-gradient(to top,rgba(2,95,54,0.75),transparent);}
+.ba-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#DBEAFE,#E0F2FE);}
+.ba-placeholder-icon{font-size:40px;opacity:0.4;}
+.ba-placeholder-text{font-size:11px;color:#64748B;font-weight:600;}
+
+/* Photo gallery */
+.gallery-box{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(15,42,107,0.07);}
+.gallery-header{padding:16px 20px 12px;border-bottom:1px solid #F1F5F9;}
+.gallery-header h2{font-size:14px;font-weight:800;color:#0f2a6b;}
+.gallery-header p{font-size:11px;color:#64748B;margin-top:3px;}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px;}
+.photo-item{aspect-ratio:4/3;overflow:hidden;cursor:pointer;background:#E2E8F0;position:relative;}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.25s;}
+.photo-item:hover img{transform:scale(1.06);}
+.photo-item .ov{position:absolute;inset:0;background:rgba(15,42,107,0);transition:background 0.2s;display:flex;align-items:center;justify-content:center;}
+.photo-item:hover .ov{background:rgba(15,42,107,0.35);}
+.ov-icon{color:#fff;font-size:22px;opacity:0;transform:scale(0.8);transition:opacity 0.2s,transform 0.2s;}
+.photo-item:hover .ov-icon{opacity:1;transform:scale(1);}
+.photo-caption{font-size:10px;color:#94A3B8;text-align:center;padding:4px 2px;background:#FAFAFA;}
+
+/* Process */
+.process-box{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 2px 14px rgba(15,42,107,0.07);}
+.process-box h2{font-size:16px;font-weight:800;color:#0f2a6b;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #38BDF8;}
+.process-steps{display:flex;flex-direction:column;gap:0;}
+.process-step{display:flex;gap:16px;padding-bottom:20px;position:relative;}
+.process-step:not(:last-child)::before{content:'';position:absolute;left:16px;top:36px;bottom:0;width:2px;background:#E2E8F0;}
+.step-num{width:34px;height:34px;border-radius:50%;background:#0f2a6b;color:#38BDF8;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
+.step-body{padding-top:4px;}
+.step-title{font-size:14px;font-weight:800;color:#0f2a6b;margin-bottom:5px;}
+.step-desc{font-size:13px;color:#475569;line-height:1.8;}
+
+/* ══ SIDEBAR ══ */
+.sidebar{display:flex;flex-direction:column;gap:18px;}
+.info-box{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(15,42,107,0.08);}
+.info-box h3{font-size:13px;font-weight:800;color:#0f2a6b;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #38BDF8;display:flex;align-items:center;gap:6px;}
+.info-table{display:flex;flex-direction:column;gap:10px;}
+.info-row{display:flex;flex-direction:column;gap:2px;}
+.info-key{font-size:10px;color:#94A3B8;font-weight:700;letter-spacing:0.5px;}
+.info-val{font-size:13px;color:#1E293B;font-weight:500;line-height:1.5;}
+
+/* Tags */
+.tags-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+.tag{background:#F0F9FF;border:1px solid #BAE6FD;color:#0369A1;font-size:10px;font-weight:600;padding:3px 9px;border-radius:5px;}
+
+/* Point box */
+.point-box{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border-radius:14px;padding:18px 20px;border:1px solid #BFDBFE;}
+.point-box h3{font-size:13px;font-weight:800;color:#1e40af;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.point-list{display:flex;flex-direction:column;gap:9px;}
+.point-item{display:flex;align-items:flex-start;gap:8px;}
+.point-dot{width:6px;height:6px;border-radius:50%;background:#38BDF8;flex-shrink:0;margin-top:6px;}
+.point-text{font-size:12px;color:#1e293b;line-height:1.7;}
+
+/* CTA */
+.cta-box{background:linear-gradient(135deg,#0f2a6b,#1e40af);border-radius:16px;padding:22px 20px;text-align:center;}
+.cta-box p{font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:14px;line-height:1.7;}
+.cta-btn{display:inline-block;background:#38BDF8;color:#04090f;padding:11px 28px;border-radius:6px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:0.5px;transition:opacity 0.2s;}
+.cta-btn:hover{opacity:0.85;}
+
+/* Sample banner */
+.sample-banner{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:12px 18px;display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.sample-banner-icon{font-size:20px;flex-shrink:0;}
+.sample-banner-text{font-size:12px;color:#92400E;line-height:1.6;}
+.sample-banner-text strong{display:block;font-size:13px;margin-bottom:2px;}
+
+/* Lightbox */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;flex-direction:column;align-items:center;justify-content:center;}
+#lightbox.active{display:flex;}
+#lb-close{position:fixed;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer;z-index:1010;opacity:0.7;user-select:none;}
+#lb-close:hover{opacity:1;}
+#lb-img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 48px rgba(0,0,0,0.5);}
+#lb-caption{color:rgba(255,255,255,0.7);font-size:13px;margin-top:14px;}
+#lb-prev,#lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.12);border:none;color:#fff;font-size:24px;width:48px;height:48px;border-radius:50%;cursor:pointer;z-index:1010;display:flex;align-items:center;justify-content:center;}
+#lb-prev{left:16px;}#lb-next{right:16px;}
+#lb-prev:hover,#lb-next:hover{background:rgba(255,255,255,0.25);}
+
+/* ft-totop */
+.ft-totop{text-align:center;padding:20px 0 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.ft-totop-btn{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-decoration:none;transition:color 0.2s;}
+.ft-totop-btn:hover{color:#38BDF8;}
+footer{background:#060d1a;color:rgba(255,255,255,0.45);padding:40px 52px 28px;font-size:12px;}
+.ft-inner{max-width:1100px;margin:0 auto;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);margin-top:20px;font-size:11px;color:rgba(255,255,255,0.25);}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a class="hdr-logo" href="santech_top.html"><b>SUN</b>TECH　株式会社サンテック</a>
+  <nav class="hdr-nav">
+    <a href="santech_top.html">TOP</a>
+    <a href="santech_company.html">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html" class="active">WORKS</a>
+    <a href="santech_recruit.html">RECRUIT</a>
+    <a href="santech_contact.html" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="santech_施工事例.html">施工事例</a>
+  <span>›</span>
+  <a href="santech_cases_bridge.html">橋脚・橋梁</a>
+  <span>›</span>
+  RC橋脚 塩害劣化層除去・補修前処理
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="badge-pill">CASE 01 / 橋脚・橋梁</span></div>
+    <h1>RC橋脚 <span>塩害劣化層除去</span>・補修前処理<br>超高圧ウォータージェット工法</h1>
+    <div class="hero-meta">
+      <div class="hmi"><span class="hml">施工場所</span><span class="hmv">福岡県</span></div>
+      <div class="hmi"><span class="hml">施工工法</span><span class="hmv">超高圧ウォータージェット工法</span></div>
+      <div class="hmi"><span class="hml">施工対象</span><span class="hmv">RC橋脚 8基</span></div>
+      <div class="hmi"><span class="hml">施工面積</span><span class="hmv">約 620㎡</span></div>
+      <div class="hmi"><span class="hml">施工年</span><span class="hmv">2022年</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- サンプルページ注記 -->
+  <div class="sample-banner">
+    <span class="sample-banner-icon">📋</span>
+    <div class="sample-banner-text">
+      <strong>これはサンプルページです</strong>
+      実際の掲載時には施工写真・正確なデータに差し替えます。現在の数値・内容は参考値です。
+    </div>
+  </div>
+
+  <a class="back-btn" href="santech_cases_bridge.html">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    橋脚・橋梁 一覧に戻る
+  </a>
+
+  <div class="layout">
+
+    <!-- 左カラム -->
+    <div class="content-col">
+
+      <!-- 施工概要テキスト -->
+      <div class="summary-box">
+        <h2>施工概要</h2>
+        <p>
+          本案件は、供用開始から30年以上が経過したRC橋梁の橋脚において、海塩粒子による塩害が進行し、鉄筋腐食と伴うコンクリートの爆裂・剥落が確認されたため、断面修復工法による補修の前処理として超高圧ウォータージェット工法を採用した事例です。
+        </p>
+        <p>
+          グラインダーやはつり機による従来工法では、健全部まで除去してしまうリスクと振動による周辺部へのダメージが懸念されていました。超高圧ウォータージェット工法（使用圧力 280MPa）は、劣化層のみを選択的に除去しながら健全なコンクリートを残せるため、補修材との付着面を確実に確保できます。
+        </p>
+        <p>
+          全8基の橋脚を約12日間で施工。劣化層を均一に除去した後、断面修復材を充填・補修材塗布へとスムーズに移行しました。
+        </p>
+      </div>
+
+      <!-- Before / After -->
+      <div class="ba-box">
+        <div class="ba-header">
+          <h2>📸 施工前後 比較</h2>
+          <p>写真をクリックすると拡大表示されます</p>
+        </div>
+        <div class="ba-grid">
+          <div class="ba-item" onclick="openLb(0)">
+            <img src="https://drive.google.com/thumbnail?id=1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc&sz=w600" alt="施工前 RC橋脚 塩害劣化" onerror="this.parentElement.classList.add('ba-placeholder');this.style.display='none';">
+            <div class="ba-label">BEFORE — 施工前</div>
+          </div>
+          <div class="ba-item ba-placeholder">
+            <span class="ba-placeholder-icon">🏗</span>
+            <span class="ba-placeholder-text">施工後写真（準備中）</span>
+            <div class="ba-label after">AFTER — 施工後</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 施工プロセス -->
+      <div class="process-box">
+        <h2>施工の流れ</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <div class="step-title">現地調査・劣化範囲のマーキング</div>
+              <div class="step-desc">打音検査・中性化深さ測定により劣化範囲を特定。施工前に橋脚全基の健全性評価を実施し、WJ施工が必要な箇所をマーキングしました。</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <div class="step-title">足場・養生設置</div>
+              <div class="step-desc">河川内施工のため、仮設足場を設置。排水処理設備を配置し、ウォータージェット使用水が河川へ流出しないよう万全の養生を施しました。</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <div class="step-title">超高圧ウォータージェット施工（280MPa）</div>
+              <div class="step-desc">4tトラック搭載型ポンプユニットを使用し、280MPaの超高圧水を噴射。劣化コンクリート層を選択的に除去しながら、骨材表面を露出させ付着強度を確保しました。施工面積は全体で約620㎡。</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <div class="step-title">表面処理・引渡し確認</div>
+              <div class="step-desc">除去後の表面を高圧水洗浄で仕上げ、付着強度試験（プルオフ試験）で規定値以上を確認。断面修復業者へ滞りなく引き渡しました。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 写真ギャラリー -->
+      <div class="gallery-box">
+        <div class="gallery-header">
+          <h2>📷 施工写真ギャラリー</h2>
+          <p>クリックで拡大・矢印キーで切替</p>
+        </div>
+        <div class="photo-grid" id="photo-grid"></div>
+      </div>
+
+    </div>
+
+    <!-- サイドバー -->
+    <div class="sidebar">
+
+      <div class="info-box">
+        <h3>📋 施工概要</h3>
+        <div class="info-table">
+          <div class="info-row"><span class="info-key">施工場所</span><span class="info-val">福岡県</span></div>
+          <div class="info-row"><span class="info-key">施工年</span><span class="info-val">2022年</span></div>
+          <div class="info-row"><span class="info-key">施工対象</span><span class="info-val">RC橋脚 8基</span></div>
+          <div class="info-row"><span class="info-key">施工工法</span><span class="info-val">超高圧ウォータージェット工法</span></div>
+          <div class="info-row"><span class="info-key">使用圧力</span><span class="info-val">280 MPa</span></div>
+          <div class="info-row"><span class="info-key">施工面積</span><span class="info-val">約 620 ㎡</span></div>
+          <div class="info-row"><span class="info-key">工期</span><span class="info-val">約 12日間</span></div>
+          <div class="info-row"><span class="info-key">使用機材</span><span class="info-val">4tトラック搭載型超高圧ポンプユニット</span></div>
+          <div class="info-row">
+            <span class="info-key">使用工法タグ</span>
+            <div class="tags-row">
+              <span class="tag">超高圧WJ</span>
+              <span class="tag">塩害対策</span>
+              <span class="tag">補修前処理</span>
+              <span class="tag">橋梁補修</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <h3>✅ この施工のポイント</h3>
+        <div class="point-list">
+          <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">振動なし・健全部を傷めない選択的劣化層除去</div>
+          </div>
+          <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">排水処理設備による河川汚染ゼロの環境対策</div>
+          </div>
+          <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">プルオフ試験で規定値以上の付着強度を確認済み</div>
+          </div>
+          <div class="point-item">
+            <div class="point-dot"></div>
+            <div class="point-text">8基・620㎡を12日間で完了。後工程への工期短縮に貢献</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-box">
+        <p>同様の橋脚・橋梁補修のご相談、お見積りはお気軽にどうぞ。</p>
+        <a href="santech_contact.html" class="cta-btn">お問い合わせ・お見積り</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span id="lb-close">✕</span>
+  <button id="lb-prev">‹</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-caption"></div>
+  <button id="lb-next">›</button>
+</div>
+
+<footer>
+  <div class="ft-totop">
+    <a href="santech_top.html" class="ft-totop-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+      TOP
+    </a>
+  </div>
+  <div class="ft-inner">
+    <div class="ft-bottom">
+      <span>© 2024 株式会社サンテック All Rights Reserved.</span>
+      <span>〒802-0824 福岡県北九州市小倉南区横代341-1</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Photos — 実際の施工写真IDに差し替えてください
+const photos = [
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工前 — 橋脚表面の塩害劣化状況' },
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工前 — 爆裂・剥落箇所のクローズアップ' },
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工中 — 超高圧WJ噴射状況' },
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工中 — 足場・養生設置状況' },
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工後 — 劣化層除去後の骨材露出面' },
+  { id: '1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc', cap: '施工後 — 仕上がり全景' },
+];
+
+function thumb(id, sz){ return `https://drive.google.com/thumbnail?id=${id}&sz=w${sz||400}`; }
+
+// Build gallery
+const grid = document.getElementById('photo-grid');
+photos.forEach((p, i) => {
+  const div = document.createElement('div');
+  div.className = 'photo-item';
+  div.innerHTML = `<img src="${thumb(p.id,400)}" alt="${p.cap}" onerror="this.parentElement.style.background='#dbeafe';this.style.display='none';">
+    <div class="ov"><span class="ov-icon">🔍</span></div>`;
+  div.addEventListener('click', () => openLb(i));
+  grid.appendChild(div);
+});
+
+let lbIdx = 0;
+function openLb(i){ lbIdx=i; updateLb(); document.getElementById('lightbox').classList.add('active'); document.body.style.overflow='hidden'; }
+function closeLb(){ document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow=''; }
+function updateLb(){
+  document.getElementById('lb-img').src = thumb(photos[lbIdx].id, 1200);
+  document.getElementById('lb-caption').textContent = photos[lbIdx].cap;
+}
+document.getElementById('lb-close').onclick = closeLb;
+document.getElementById('lb-prev').onclick = () => { lbIdx=(lbIdx-1+photos.length)%photos.length; updateLb(); };
+document.getElementById('lb-next').onclick = () => { lbIdx=(lbIdx+1)%photos.length; updateLb(); };
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target===document.getElementById('lightbox')) closeLb(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); if(e.key==='ArrowLeft') { lbIdx=(lbIdx-1+photos.length)%photos.length; updateLb(); } if(e.key==='ArrowRight') { lbIdx=(lbIdx+1)%photos.length; updateLb(); } });
+
+// Header scroll
+window.addEventListener('scroll', () => { document.getElementById('hdr').classList.toggle('on', window.scrollY > 30); });
+
+// Mobile nav
+function closeMobileNav(){ document.getElementById('navMobile').classList.remove('open'); document.getElementById('hamburger').classList.remove('open'); }
+document.getElementById('hamburger').addEventListener('click', function(){ this.classList.toggle('open'); document.getElementById('navMobile').classList.toggle('open'); });
+</script>
+</body>
+</html>
