@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ CONTACT | 株式会社サンテック</title>
+<meta name="description" content="株式会社サンテックへのお問い合わせはこちら。超高圧ウォータージェット工法に関するご相談・お見積りを承ります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#04090f;
+  --navy:#0a1628;
+  --blue:#0f2a6b;
+  --cyan:#38BDF8;
+  --light:#eef4fb;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden;}
+
+/* ft-totop */
+.ft-totop{text-align:center;padding:20px 0 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0;}
+.ft-totop-btn{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-decoration:none;transition:color 0.2s;}
+.ft-totop-btn:hover{color:var(--cyan);}
+/* ══ HEADER ══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;transition:all 0.5s;background:rgba(10,22,48,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.1);}
+.logo{font-size:19px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:1px;white-space:nowrap;}
+.logo b{color:var(--cyan);}
+.logo span{font-size:11px;color:rgba(255,255,255,0.45);margin-left:10px;font-weight:400;letter-spacing:0.5px;}
+.nav{display:flex;align-items:center;gap:28px;}
+.nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav a:hover{color:var(--cyan);}
+.nav a.active{color:#fff;}
+.nav-cta{color:var(--cyan)!important;border:1px solid var(--cyan);padding:7px 20px;border-radius:4px;transition:background 0.2s!important;}
+.nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+
+/* ══ HAMBURGER ══ */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover{color:var(--cyan);}
+.nav-mobile .nav-cta-m{color:var(--cyan)!important;border:1px solid var(--cyan);padding:14px 48px;border-radius:4px;}
+
+/* ══ HERO ══ */
+.contact-hero{position:relative;padding:160px 52px 80px;overflow:hidden;background:var(--navy);}
+.ch-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.ch-glow{position:absolute;top:30%;right:5%;width:600px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.07) 0%,transparent 70%);pointer-events:none;}
+.ch-bottom{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#eef4fb);}
+.ch-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;text-align:center;}
+.ch-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;color:var(--cyan);margin-bottom:16px;display:block;opacity:0;animation:fadeUp 0.7s 0.3s forwards;}
+.ch-title{font-size:clamp(32px,4.5vw,60px);font-weight:700;line-height:1.1;margin-bottom:20px;opacity:0;animation:fadeUp 0.8s 0.5s forwards;}
+.ch-title .en{font-family:'Barlow Condensed',sans-serif;font-weight:900;color:var(--cyan);}
+.ch-sub{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.9;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+/* ══ CONTACT BODY ══ */
+.contact-body{background:var(--light);padding:0 52px 96px;}
+.contact-wrap{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:56px;padding-top:64px;}
+
+/* ── フォーム側 ── */
+.form-block{}
+.form-title{font-size:22px;font-weight:700;color:#0f172a;margin-bottom:6px;}
+.form-note{font-size:13px;color:#64748b;margin-bottom:36px;line-height:1.8;}
+.form-note strong{color:#0f172a;}
+
+.form-group{margin-bottom:24px;}
+.form-label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#0f172a;margin-bottom:8px;}
+.badge-req{display:inline-block;padding:2px 8px;background:var(--cyan);color:#04090f;font-size:10px;font-weight:700;border-radius:3px;letter-spacing:0.5px;}
+.badge-opt{display:inline-block;padding:2px 8px;background:rgba(15,23,42,0.08);color:#64748b;font-size:10px;font-weight:700;border-radius:3px;letter-spacing:0.5px;}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea{
+  width:100%;padding:13px 16px;
+  border:1.5px solid rgba(15,23,42,0.15);
+  border-radius:8px;
+  background:#fff;
+  font-size:14px;
+  font-family:'Noto Sans JP',sans-serif;
+  color:#0f172a;
+  transition:border-color 0.2s, box-shadow 0.2s;
+  outline:none;
+  appearance:none;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 3px rgba(56,189,248,0.12);
+}
+input::placeholder,textarea::placeholder{color:#cbd5e1;}
+textarea{resize:vertical;min-height:160px;line-height:1.8;}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+select option{color:#0f172a;}
+
+/* ラジオ・チェックボックス */
+.radio-group,.checkbox-group{display:flex;flex-direction:column;gap:10px;}
+.radio-item,.checkbox-item{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.radio-item input[type="radio"],
+.checkbox-item input[type="checkbox"]{
+  width:18px;height:18px;flex-shrink:0;
+  accent-color:var(--cyan);
+  cursor:pointer;
+}
+.radio-item label,.checkbox-item label{font-size:14px;color:#0f172a;cursor:pointer;line-height:1.5;}
+
+/* プライバシー同意 */
+.privacy-box{padding:16px 18px;background:rgba(15,23,42,0.04);border:1px solid rgba(15,23,42,0.1);border-radius:8px;margin-bottom:28px;}
+.privacy-box p{font-size:12px;color:#64748b;line-height:1.8;margin-bottom:10px;}
+.privacy-link{color:var(--cyan);text-decoration:underline;cursor:pointer;}
+
+/* 送信ボタン */
+.submit-btn{
+  width:100%;padding:18px;
+  background:var(--cyan);color:#04090f;
+  font-size:15px;font-weight:700;
+  border:none;border-radius:8px;cursor:pointer;
+  letter-spacing:0.5px;
+  transition:all 0.25s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.submit-btn:hover{background:#7DD3FC;transform:translateY(-2px);box-shadow:0 10px 32px rgba(56,189,248,0.35);}
+.submit-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ── サイドバー ── */
+.contact-sidebar{display:flex;flex-direction:column;gap:20px;}
+
+.side-card{padding:28px 24px;border-radius:12px;}
+.side-card.dark{background:var(--navy);border:1px solid rgba(56,189,248,0.1);}
+.side-card.light{background:#fff;border:1px solid rgba(15,23,42,0.08);box-shadow:0 2px 12px rgba(15,23,42,0.06);}
+
+.side-card-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;margin-bottom:14px;}
+.dark .side-card-tag{color:var(--cyan);}
+.light .side-card-tag{color:var(--cyan);}
+
+.side-tel{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;line-height:1;}
+.dark .side-tel-label{font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:16px;letter-spacing:0.5px;}
+.light .side-tel-label{font-size:11px;color:#94a3b8;margin-bottom:16px;letter-spacing:0.5px;}
+
+.side-info-row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.dark .side-info-row{border-bottom-color:rgba(255,255,255,0.05);}
+.light .side-info-row{border-bottom-color:rgba(15,23,42,0.06);}
+.side-info-row:last-child{border-bottom:none;}
+.side-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px;}
+.side-icon svg{width:20px;height:20px;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.dark .side-icon svg{stroke:rgba(255,255,255,0.4);}
+.light .side-icon svg{stroke:#94a3b8;}
+.side-info-text .si-label{font-size:10px;color:rgba(255,255,255,0.35);margin-bottom:2px;letter-spacing:0.5px;}
+.light .si-label{color:#94a3b8;}
+.side-info-text .si-val{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;}
+.light .si-val{color:#0f172a;}
+
+.faq-item{padding:14px 0;border-bottom:1px solid rgba(15,23,42,0.07);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:5px;}
+.faq-q::before{content:'Q. ';color:var(--cyan);}
+.faq-a{font-size:12px;color:#64748b;line-height:1.7;}
+.faq-a::before{content:'A. ';color:#94a3b8;font-weight:600;}
+
+/* ── 送信完了メッセージ ── */
+.thanks-msg{display:none;text-align:center;padding:64px 40px;}
+.thanks-icon{width:72px;height:72px;border-radius:50%;background:rgba(56,189,248,0.1);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.thanks-icon svg{width:36px;height:36px;stroke:var(--cyan);fill:none;stroke-width:2;}
+.thanks-title{font-size:22px;font-weight:700;color:#0f172a;margin-bottom:12px;}
+.thanks-text{font-size:14px;color:#64748b;line-height:1.9;margin-bottom:32px;}
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--cyan);color:#04090f;font-size:13px;font-weight:700;border-radius:6px;text-decoration:none;transition:all 0.25s;}
+.back-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,0.3);}
+
+/* ══ FOOTER ══ */
+footer{background:#04090f;}
+.ft-body{max-width:1200px;margin:0 auto;padding:72px 52px 44px;}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+.ft-col-logo .ft-logo{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+.ft-col-logo .ft-logo b{color:var(--cyan);}
+.ft-tagline{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.8;margin-bottom:24px;}
+.ft-tel{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;}
+.ft-tel-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:16px;}
+.ft-addr{font-size:13px;color:rgba(255,255,255,0.65);line-height:2.0;}
+.ft-col-nav h4{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:3px;margin-bottom:18px;}
+.ft-col-nav ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col-nav a{color:rgba(255,255,255,0.70);font-size:13px;text-decoration:none;transition:color 0.2s;}
+.ft-col-nav a:hover{color:#fff;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+.ft-copy{color:rgba(255,255,255,0.45);font-size:12px;}
+.ft-member{font-size:12px;color:rgba(255,255,255,0.45);}
+
+/* ══ MOBILE ══ */
+@media(max-width:900px){
+  .nav-hamburger{display:flex;}
+  .nav{display:none;}
+  .hdr{padding:12px 16px;}
+  .logo span{display:none;}
+  .contact-hero{padding:120px 20px 60px;}
+  .contact-body{padding:0 20px 64px;}
+  .contact-wrap{grid-template-columns:1fr;gap:40px;padding-top:48px;}
+  .contact-sidebar{order:-1;}
+  .side-card.dark{background:var(--navy);}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:32px;}
+}
+@media(max-width:480px){
+  .ft-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ▼ HEADER -->
+<header class="hdr">
+  <a class="logo" href="santech_top.html"><b>SUN</b>TECH<span>株式会社サンテック</span></a>
+  <nav class="nav">
+    <a href="santech_top.html">TOP</a>
+    <a href="santech_company.html">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html">WORKS</a>
+    <a href="santech_recruit.html">RECRUIT</a>
+    <a href="santech_contact.html" class="nav-cta active">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+
+<!-- ▼ HERO -->
+<section class="contact-hero">
+  <div class="ch-grid"></div>
+  <div class="ch-glow"></div>
+  <div class="ch-bottom"></div>
+  <div class="ch-inner">
+    <span class="ch-tag">CONTACT</span>
+    <h1 class="ch-title">
+      お問い合わせ<br>
+      <span class="en">GET IN TOUCH</span>
+    </h1>
+    <p class="ch-sub">
+      施工のご相談・お見積りは無料です。<br>
+      「他社で断られた」「どんな工法か知りたい」など、まずはお気軽にご相談ください。
+    </p>
+  </div>
+</section>
+
+<!-- ▼ CONTACT BODY -->
+<section class="contact-body">
+  <div class="contact-wrap">
+
+    <!-- ── フォーム ── -->
+    <div class="form-block">
+      <h2 class="form-title">お問い合わせフォーム</h2>
+      <p class="form-note">
+        <strong>※</strong> は必須項目です。通常 <strong>1〜2営業日以内</strong> にご返信いたします。
+      </p>
+
+      <form id="contactForm" novalidate>
+
+        <!-- お問い合わせ種別 -->
+        <div class="form-group">
+          <div class="form-label">
+            お問い合わせ種別
+            <span class="badge-req">必須</span>
+          </div>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="inquiry_type" value="見積依頼" checked>
+              <label>お見積り依頼</label>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="inquiry_type" value="工法相談">
+              <label>工法・技術に関するご相談</label>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="inquiry_type" value="採用">
+              <label>採用に関するお問い合わせ</label>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="inquiry_type" value="その他">
+              <label>その他</label>
+            </label>
+          </div>
+        </div>
+
+        <!-- 会社名 -->
+        <div class="form-group">
+          <div class="form-label">
+            会社名・団体名
+            <span class="badge-opt">任意</span>
+          </div>
+          <input type="text" name="company" placeholder="例：株式会社○○建設">
+        </div>
+
+        <!-- 氏名 -->
+        <div class="form-group">
+          <div class="form-label">
+            お名前
+            <span class="badge-req">必須</span>
+          </div>
+          <input type="text" name="name" id="name" placeholder="例：山田 太郎" required>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-group">
+          <div class="form-label">
+            電話番号
+            <span class="badge-opt">任意</span>
+          </div>
+          <input type="tel" name="tel" placeholder="例：093-000-0000">
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <div class="form-label">
+            メールアドレス
+            <span class="badge-req">必須</span>
+          </div>
+          <input type="email" name="email" id="email" placeholder="例：info@example.co.jp" required>
+        </div>
+
+        <!-- 施工場所（エリア） -->
+        <div class="form-group">
+          <div class="form-label">
+            施工希望エリア
+            <span class="badge-opt">任意</span>
+          </div>
+          <select name="area">
+            <option value="" disabled selected>都道府県を選択してください</option>
+            <optgroup label="── 中国地方">
+              <option value="山口県">山口県</option>
+              <option value="広島県">広島県</option>
+              <option value="岡山県">岡山県</option>
+              <option value="島根県">島根県</option>
+              <option value="鳥取県">鳥取県</option>
+            </optgroup>
+            <optgroup label="── 九州">
+              <option value="福岡県">福岡県</option>
+              <option value="佐賀県">佐賀県</option>
+              <option value="長崎県">長崎県</option>
+              <option value="熊本県">熊本県</option>
+              <option value="大分県">大分県</option>
+              <option value="宮崎県">宮崎県</option>
+              <option value="鹿児島県">鹿児島県</option>
+            </optgroup>
+            <optgroup label="── 沖縄">
+              <option value="沖縄県">沖縄県</option>
+            </optgroup>
+            <optgroup label="── その他">
+              <option value="上記以外">上記以外の地域</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- 施工対象 -->
+        <div class="form-group">
+          <div class="form-label">
+            施工対象（複数選択可）
+            <span class="badge-opt">任意</span>
+          </div>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="コンクリート構造物">
+              <label>コンクリート構造物（橋梁・トンネル・ダムなど）</label>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="上下水道施設">
+              <label>上下水道施設</label>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="プラント・工場設備">
+              <label>プラント・工場設備</label>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="船舶・港湾">
+              <label>船舶・港湾</label>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="道路・舗装">
+              <label>道路・舗装</label>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="target" value="その他・未定">
+              <label>その他・まだ決まっていない</label>
+            </label>
+          </div>
+        </div>
+
+        <!-- お問い合わせ内容 -->
+        <div class="form-group">
+          <div class="form-label">
+            お問い合わせ内容
+            <span class="badge-req">必須</span>
+          </div>
+          <textarea name="message" id="message" placeholder="施工場所の状況、現在の課題、希望する工法など、できる限り詳しくお聞かせください。" required></textarea>
+        </div>
+
+        <!-- プライバシーポリシー -->
+        <div class="privacy-box">
+          <p>お送りいただいた個人情報は、お問い合わせへのご返答・ご連絡のみに使用し、第三者への提供は行いません。</p>
+          <label class="checkbox-item">
+            <input type="checkbox" id="privacy" required>
+            <label for="privacy">プライバシーポリシーに同意する <span class="badge-req" style="font-size:9px;">必須</span></label>
+          </label>
+        </div>
+
+        <!-- 送信ボタン -->
+        <button type="submit" class="submit-btn">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          送信する
+        </button>
+
+      </form>
+
+      <!-- 送信完了メッセージ -->
+      <div class="thanks-msg" id="thanksMsg">
+        <div class="thanks-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="thanks-title">お問い合わせを受け付けました</h3>
+        <p class="thanks-text">
+          ご連絡いただきありがとうございます。<br>
+          担当者より通常 <strong>1〜2営業日以内</strong> にご返信いたします。<br>
+          しばらくお待ちください。
+        </p>
+        <a href="santech_top.html" class="back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          トップページへ戻る
+        </a>
+      </div>
+    </div>
+
+    <!-- ── サイドバー ── -->
+    <div class="contact-sidebar">
+
+      <!-- 電話 -->
+      <div class="side-card dark">
+        <div class="side-card-tag">TEL</div>
+        <div class="side-tel">093-475-7263</div>
+        <div class="side-tel-label">平日 8:00〜17:00</div>
+        <div class="side-info-row">
+          <div class="side-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3-8.57A2 2 0 012.1 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.17 8.84a16 16 0 006 6l1.2-1.2a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="side-info-text">
+            <div class="si-label">対応時間</div>
+            <div class="si-val">月〜金 8:00〜17:00<br>（祝日・年末年始を除く）</div>
+          </div>
+        </div>
+        <div class="side-info-row">
+          <div class="side-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="side-info-text">
+            <div class="si-label">メール</div>
+            <div class="si-val">info@santec-wj.jp</div>
+          </div>
+        </div>
+        <div class="side-info-row">
+          <div class="side-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="side-info-text">
+            <div class="si-label">所在地</div>
+            <div class="si-val">〒802-0824<br>福岡県北九州市<br>小倉南区横代341-1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- よくある質問 -->
+      <div class="side-card light">
+        <div class="side-card-tag" style="color:var(--cyan);">よくあるご質問</div>
+        <div class="faq-item">
+          <div class="faq-q">見積りは無料ですか？</div>
+          <div class="faq-a">はい、現地調査・お見積りは無料です。お気軽にご依頼ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">対応エリアはどこですか？</div>
+          <div class="faq-a">中国地方（山口・広島・岡山など）・九州全域・沖縄を対応エリアとしています。それ以外の地域もご相談ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">他社で断られた案件でも相談できますか？</div>
+          <div class="faq-a">はい。難易度の高い特殊施工も40年以上の実績から対応策をご提案します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">返信はどのくらいかかりますか？</div>
+          <div class="faq-a">通常1〜2営業日以内にご返信いたします。急ぎの場合はお電話ください。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ▼ FOOTER -->
+<footer>
+  <div class="ft-body">
+    <div class="ft-grid">
+      <div class="ft-col-logo">
+        <div class="ft-logo"><b>SUN</b>TECH</div>
+        <p class="ft-tagline">超高圧ウォータージェット工法専門<br>国内でも数少ない専業施工会社<br>日本ウォータージェット施工協会会員</p>
+        <div class="ft-tel">093-475-7263</div>
+        <div class="ft-tel-label">TEL（平日 8:00〜17:00）</div>
+        <div class="ft-addr">福岡県北九州市八幡西区木屋瀬3丁目16番1号<br>FAX：093-475-7368</div>
+      </div>
+      <nav class="ft-col-nav">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="santech_company.html">会社概要</a></li>
+          <li><a href="santech_company.html">代表挨拶</a></li>
+          <li><a href="santech_recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col-nav">
+        <h4>TECHNOLOGY</h4>
+        <ul>
+          <li><a href="santech_technology.html">工法概要</a></li>
+          <li><a href="santech_technology.html#applications">コンクリート構造物</a></li>
+          <li><a href="santech_technology.html#applications">プラント・工場</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col-nav">
+        <h4>WORKS</h4>
+        <ul>
+          <li><a href="santech_施工事例.html">施工事例一覧</a></li>
+          <li><a href="santech_cases_suido.html">上下水道施設</a></li>
+          <li><a href="santech_cases_bridge.html">橋脚・橋梁</a></li>
+          <li><a href="santech_cases_ship.html">船・港湾</a></li>
+          <li><a href="santech_contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 株式会社サンテック All Rights Reserved.</p>
+      <p class="ft-member">日本ウォータージェット施工協会会員</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ハンバーガー
+function closeMobileNav(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('navMobile').classList.remove('open');
+}
+document.getElementById('hamburger').addEventListener('click',()=>{
+  const isOpen = document.getElementById('navMobile').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open',isOpen);
+});
+
+// フォーム送信（サンプル動作）
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  // バリデーション
+  const name    = document.getElementById('name').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const privacy = document.getElementById('privacy').checked;
+
+  if(!name || !email || !message || !privacy){
+    alert('必須項目をすべてご入力のうえ、プライバシーポリシーへの同意をお願いします。');
+    return;
+  }
+
+  // 送信完了表示（実際の送信処理はサーバー側で実装）
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('thanksMsg').style.display = 'block';
+  window.scrollTo({top: document.querySelector('.form-block').offsetTop - 100, behavior:'smooth'});
+});
+</script>
+</body>
+</html>

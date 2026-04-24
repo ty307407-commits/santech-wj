@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 株式会社サンテック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#04090f;
+  --navy:#0a1628;
+  --cyan:#38BDF8;
+  --cyan2:#7DD3FC;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden;}
+.en{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+
+/* ft-totop */
+.ft-totop{text-align:center;padding:20px 0 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0;}
+.ft-totop-btn{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-decoration:none;transition:color 0.2s;}
+.ft-totop-btn:hover{color:var(--cyan);}
+/* ══ HEADER ══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,48,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.1);}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:1px;}
+.logo b{color:var(--cyan);}
+.logo span{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.6);margin-left:10px;letter-spacing:0;}
+.nav{display:flex;align-items:center;gap:28px;}
+.nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav a:hover{color:var(--cyan);}
+.nav a.active{color:#fff;}
+.nav-cta{color:var(--cyan)!important;border:1px solid var(--cyan);padding:7px 20px;border-radius:4px;}
+.nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+
+/* ══ PAGE HERO ══ */
+.page-hero{position:relative;height:420px;overflow:hidden;display:flex;align-items:flex-end;margin-top:57px;}
+.page-hero-bg{position:absolute;inset:0;background-image:url('./images/team_photo.jpg');background-size:cover;background-position:center 40%;filter:grayscale(5%);}
+.page-hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(4,9,15,0.08) 0%,rgba(10,22,40,0.04) 50%,rgba(4,9,15,0.10) 100%);}
+.page-hero-grad2{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,9,15,0.1) 0%,rgba(4,9,15,0.65) 80%,#eef4fb 100%);}
+.page-hero-content{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;padding:0 52px 56px;}
+.page-breadcrumb{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:2px;margin-bottom:16px;}
+.page-breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none;}
+.page-breadcrumb a:hover{color:var(--cyan);}
+.page-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:4px;margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.page-tag::before{content:'';width:28px;height:1px;background:var(--cyan);}
+.page-hero-title{font-size:clamp(32px,5vw,64px);font-weight:700;line-height:1.1;margin-bottom:12px;}
+.page-hero-sub{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:480px;}
+
+/* ══ SECTION COMMON ══ */
+.wrap{max-width:1100px;margin:0 auto;padding:0 52px;}
+.sec{padding:96px 0;}
+.sec-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:4px;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sec-eyebrow::before{content:'';width:22px;height:1px;background:var(--cyan);}
+.sec-h2{font-size:clamp(24px,3.2vw,38px);font-weight:700;line-height:1.2;margin-bottom:40px;}
+.sec-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(56,189,248,0.18),transparent);margin:0;}
+
+/* ══ ANCHOR LINKS ══ */
+.anchor-links{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0;}
+.anchor-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:1px solid rgba(56,189,248,0.25);border-radius:4px;color:rgba(255,255,255,0.65);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;letter-spacing:0.5px;}
+.anchor-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(56,189,248,0.06);}
+.anchor-btn::after{content:'↓';font-size:10px;opacity:0.5;}
+
+/* ══ MESSAGE SECTION ══ */
+#message{position:relative;height:600px;overflow:hidden;}
+.msg-photo{position:absolute;inset:0;background-image:url('./images/worker_handgun.jpg');background-size:cover;background-position:center top;}
+.msg-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,48,0.85) 0%,rgba(4,9,15,0.7) 45%,rgba(4,9,15,0.1) 100%);}
+.msg-content{position:absolute;inset:0;display:flex;align-items:center;padding:0 80px;}
+.msg-inner{max-width:520px;}
+.msg-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:5px;margin-bottom:32px;display:flex;align-items:center;gap:14px;}
+.msg-eyebrow::before{content:'';width:32px;height:1px;background:var(--cyan);}
+.msg-quote{font-size:clamp(34px,4vw,56px);font-weight:700;line-height:1.35;color:#fff;margin-bottom:40px;letter-spacing:0.03em;}
+.msg-quote .accent{color:var(--cyan);}
+.msg-body{font-size:16px;color:rgba(255,255,255,0.6);line-height:2;border-top:1px solid rgba(255,255,255,0.1);padding-top:32px;}
+.msg-body strong{color:rgba(255,255,255,0.9);}
+
+/* ══ VALUES (3つの価値) ══ */
+.values-sec{background:var(--navy);padding:96px 0;position:relative;overflow:hidden;}
+.values-sec::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+@media(max-width:760px){.values-grid{grid-template-columns:1fr;}}
+.val-card{position:relative;padding:48px 40px 52px;background:rgba(4,9,15,0.5);overflow:hidden;transition:background 0.3s;}
+.val-card:hover{background:rgba(4,9,15,0.7);}
+.val-num{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:700;color:rgba(56,189,248,0.06);line-height:1;position:absolute;top:20px;right:24px;letter-spacing:-2px;}
+.val-icon{width:48px;height:48px;margin-bottom:24px;}
+.val-icon svg{width:100%;height:100%;}
+.val-en{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:3px;margin-bottom:8px;}
+.val-ja{font-size:22px;font-weight:700;margin-bottom:16px;color:#fff;}
+.val-desc{font-size:13px;color:rgba(255,255,255,0.48);line-height:1.85;}
+.val-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.val-card:hover::after{transform:scaleX(1);}
+
+.val-sum{margin-top:2px;padding:40px;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.12);display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+.val-sum-eq{font-family:'Barlow Condensed',sans-serif;font-size:20px;color:rgba(255,255,255,0.2);font-weight:300;}
+.val-sum-item{font-size:16px;font-weight:500;color:rgba(255,255,255,0.7);}
+.val-sum-result{font-size:20px;font-weight:700;color:var(--cyan);}
+
+/* ══ ENVIRONMENT ══ */
+.env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;}
+@media(max-width:760px){.env-grid{grid-template-columns:1fr;}}
+.env-card{background:var(--navy);border:1px solid rgba(56,189,248,0.08);border-radius:12px;padding:36px 32px;transition:border-color 0.25s,transform 0.25s;}
+.env-card:hover{border-color:rgba(56,189,248,0.25);transform:translateY(-3px);}
+.env-card-num{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:700;color:var(--cyan);line-height:1;margin-bottom:6px;}
+.env-card-num small{font-size:16px;color:rgba(255,255,255,0.4);}
+.env-card-label{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:2px;margin-bottom:20px;}
+.env-card-title{font-size:18px;font-weight:700;margin-bottom:12px;}
+.env-card-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.85;}
+
+/* ══ JOB SECTION ══ */
+.job-card{background:var(--navy);border:1px solid rgba(56,189,248,0.1);border-radius:12px;overflow:hidden;margin-bottom:24px;}
+.job-header{padding:32px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(56,189,248,0.08);flex-wrap:wrap;gap:16px;}
+.job-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:3px;margin-bottom:6px;}
+.job-title{font-size:clamp(20px,2.5vw,28px);font-weight:700;}
+.job-badge{background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);color:var(--cyan);font-size:11px;font-weight:600;padding:6px 16px;border-radius:999px;letter-spacing:1px;white-space:nowrap;}
+.job-desc{padding:28px 40px 0;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.9;max-width:700px;}
+.job-table{width:100%;border-collapse:collapse;margin:28px 40px;width:calc(100% - 80px);}
+.job-table tr{border-bottom:1px solid rgba(255,255,255,0.04);}
+.job-table tr:first-child{border-top:1px solid rgba(255,255,255,0.04);}
+.job-table th{width:160px;padding:18px 0;font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:1px;vertical-align:top;}
+.job-table td{padding:18px 0 18px 20px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.75;vertical-align:top;}
+.job-table td ul{padding-left:16px;}
+.job-table td li{margin-bottom:4px;color:rgba(255,255,255,0.6);}
+.job-table td strong{color:#fff;}
+.job-footer{padding:28px 40px 36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.btn-apply{display:inline-flex;align-items:center;gap:10px;background:var(--cyan);color:#04090f;font-size:13px;font-weight:700;padding:14px 32px;border-radius:4px;text-decoration:none;letter-spacing:0.5px;transition:all 0.25s;}
+.btn-apply:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(56,189,248,0.35);}
+.btn-contact{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;padding:14px 28px;border-radius:4px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all 0.25s;}
+.btn-contact:hover{border-color:var(--cyan);color:var(--cyan);}
+
+/* ══ CTA ══ */
+.cta-sec{position:relative;padding:96px 52px;text-align:center;overflow:hidden;background:var(--navy);}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.08) 0%,transparent 70%);pointer-events:none;}
+.cta-sec h2{position:relative;font-size:clamp(22px,3vw,36px);font-weight:700;margin-bottom:12px;}
+.cta-sec p{position:relative;font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:40px;line-height:1.8;}
+.cta-tel{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:700;color:var(--cyan);letter-spacing:3px;text-shadow:0 0 40px rgba(56,189,248,0.3);margin-bottom:6px;}
+.cta-tel-note{font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:36px;letter-spacing:1px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ══ FOOTER ══ */
+footer{position:relative;overflow:hidden;background:#04090f;}
+.ft-photo{display:none;}
+.ft-photo-grad{display:none;}
+.ft-body{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:72px 52px 44px;}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+@media(max-width:960px){.ft-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+.ft-logo{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:14px;}
+.ft-logo b{color:var(--cyan);}
+.ft-tagline{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.8;margin-bottom:24px;}
+.ft-tel{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;}
+.ft-tel-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:14px;}
+.ft-addr{font-size:13px;color:rgba(255,255,255,0.65);line-height:2.0;}
+.ft-col h4{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:3px;margin-bottom:18px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col a{color:rgba(255,255,255,0.4);font-size:12px;text-decoration:none;transition:color 0.2s;}
+.ft-col a:hover{color:#fff;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+.ft-copy{color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:0.5px;}
+
+/* ══ REVEAL ══ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.8s,transform 0.8s;}
+.rv.up{opacity:1;transform:translateY(0);}
+
+/* ══ LIGHT SECTIONS ══ */
+/* Anchor bar */
+.anchor-bar{background:#eef4fb;border-bottom:1px solid rgba(15,23,42,0.08);}
+.anchor-btn{border-color:rgba(15,23,42,0.15);color:#475569;}
+.anchor-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(56,189,248,0.06);}
+
+/* Environment section */
+#environment{background:#eef4fb;}
+#environment .sec-eyebrow{/* stays cyan */}
+#environment .sec-h2{color:#0f172a;}
+.env-card{background:#fff;border-color:rgba(15,23,42,0.08);box-shadow:0 2px 14px rgba(15,23,42,0.05);}
+.env-card:hover{border-color:rgba(56,189,248,0.3);box-shadow:0 4px 22px rgba(56,189,248,0.1);transform:translateY(-3px);}
+.env-card-label{color:#94a3b8;}
+.env-card-title{color:#0f172a;}
+.env-card-desc{color:#64748b;}
+
+/* Jobs section */
+#jobs{background:#eef4fb;}
+#jobs .sec-eyebrow{/* stays cyan */}
+#jobs .sec-h2{color:#0f172a;}
+.job-card{background:#fff;border-color:rgba(15,23,42,0.09);box-shadow:0 2px 14px rgba(15,23,42,0.05);}
+.job-header{border-bottom-color:rgba(15,23,42,0.07);}
+.job-title{color:#0f172a;}
+.job-desc{color:#64748b;}
+.job-table tr{border-bottom-color:rgba(15,23,42,0.06);}
+.job-table tr:first-child{border-top-color:rgba(15,23,42,0.06);}
+.job-table th{color:#94a3b8;}
+.job-table td{color:#475569;}
+.job-table td strong{color:#0f172a;}
+.job-table td li{color:#64748b;}
+.btn-contact{color:#475569;border-color:rgba(15,23,42,0.2);}
+.btn-contact:hover{border-color:var(--cyan);color:var(--cyan);}
+
+/* ══ ENV CARD PHOTO REDESIGN ══ */
+.env-card{padding:0;overflow:hidden;}
+.env-card-img{height:155px;background-size:cover;background-position:center;position:relative;overflow:hidden;flex-shrink:0;}
+.env-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,9,15,0.08) 0%,rgba(10,22,48,0.90) 100%);}
+.env-card-stat{position:absolute;bottom:16px;left:22px;z-index:2;}
+.env-card-stat .env-card-num{font-size:34px;margin-bottom:2px;color:var(--cyan);line-height:1;}
+.env-card-stat .env-card-num small{font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);}
+.env-card-stat .env-card-label{color:rgba(255,255,255,0.5);margin-bottom:0;font-size:9px;letter-spacing:2px;}
+.env-card-body{padding:22px 28px 30px;}
+
+/* ══ JOB HEADER SCENE ══ */
+.job-header{position:relative;background-size:cover;background-position:center 30%;}
+.job-header::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(8,18,40,0.93) 0%,rgba(8,18,40,0.78) 55%,rgba(8,18,40,0.42) 100%);z-index:0;}
+.job-header>*{position:relative;z-index:1;}
+.job-header .job-title{color:#fff;}
+
+/* ══ HAMBURGER MENU ══ */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover,.nav-mobile a:active{color:var(--cyan);}
+.nav-mobile .nav-cta-m{color:var(--cyan)!important;border:1px solid var(--cyan);padding:14px 48px;border-radius:4px;}
+/* ══ MOBILE CONTACT BAR ══ */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;grid-template-columns:1fr 1fr;height:52px;}
+.mob-bar a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.5px;}
+.mob-bar-tel{background:var(--cyan);color:#04090f;}
+.mob-bar-mail{background:#0a1628;color:#fff;border-top:1px solid rgba(56,189,248,0.25);}
+
+/* ══ MOBILE ══ */
+@media(max-width:640px){
+  .hdr{padding:12px 16px;}
+  .logo{font-size:16px;white-space:nowrap;}
+  .logo span{display:none;}
+  .nav{gap:8px;}
+  .nav a{font-size:10px;letter-spacing:0.3px;}
+  .nav-cta{padding:5px 10px!important;}
+  .page-hero{height:320px;margin-top:52px;}
+  .page-hero-content{padding:0 20px 36px;}
+  .page-hero-title{font-size:clamp(28px,9vw,48px);}
+  .anchor-bar{padding:16px 20px!important;}
+  .anchor-links{gap:8px;}
+  .anchor-btn{padding:10px 14px;font-size:11px;}
+  #message{height:auto;min-height:480px;}
+  .msg-content{padding:0 24px;}
+  .msg-quote{font-size:clamp(26px,8vw,40px);}
+  .values-sec{padding:64px 0;}
+  .values-grid{grid-template-columns:1fr!important;}
+  .wrap{padding:0 20px!important;}
+  .sec{padding:64px 0;}
+  .env-grid{grid-template-columns:1fr!important;}
+  .job-header{padding:24px 20px;}
+  .job-desc{padding:20px 20px 0;}
+  .job-table{margin:20px;width:calc(100% - 40px);}
+  .job-table th{width:90px;font-size:11px;}
+  .job-footer{padding:20px 20px 28px;flex-direction:column;}
+  .btn-apply,.btn-contact{width:100%;justify-content:center;}
+  .cta-sec{padding:64px 20px;}
+  .ft-body{padding:48px 20px 32px;}
+  .ft-grid{grid-template-columns:1fr!important;gap:24px;}
+  .ft-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <a class="logo" href="santech_top.html"><b>SUN</b>TECH<span>株式会社サンテック</span></a>
+  <nav class="nav">
+    <a href="santech_top.html">TOP</a>
+    <a href="santech_company.html">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html">WORKS</a>
+    <a href="santech_recruit.html" class="active">RECRUIT</a>
+    <a href="santech_contact.html" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="page-hero-grad2"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="santech_top.html">HOME</a> / RECRUIT</div>
+    <div class="page-tag">Recruit</div>
+    <h1 class="page-hero-title">一つの技術に、<br>誇りを持って<span style="color:var(--cyan)">働く。</span></h1>
+    <p class="page-hero-sub">超高圧ウォータージェットの専業集団として、社会インフラを守り続ける仕事があります。</p>
+  </div>
+</section>
+
+<!-- ANCHOR LINKS -->
+<div class="anchor-bar" style="padding:24px 52px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="anchor-links">
+      <a href="#message" class="anchor-btn">採用メッセージ</a>
+      <a href="#values" class="anchor-btn">3つの価値観</a>
+      <a href="#environment" class="anchor-btn">働く環境</a>
+      <a href="#jobs" class="anchor-btn">募集職種</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MESSAGE ══ -->
+<section id="message">
+  <div class="msg-photo"></div>
+  <div class="msg-grad"></div>
+  <div class="msg-content">
+    <div class="msg-inner rv">
+      <div class="msg-eyebrow">RECRUITMENT MESSAGE</div>
+      <h2 class="msg-quote">
+        先輩が後輩を<br>
+        <span class="accent">可愛がる</span>会社です。
+      </h2>
+      <div class="msg-body">
+        <p>サンテックに入ってくる人間は、最初は何もわからない。でも、それでいい。<strong>5年かけて、一人前にする</strong>——それが私たちのやり方です。</p>
+        <p>10年選手、15年選手、20年選手がいる。みんなここで育った。<strong>辞める人がいない</strong>のは、居心地がいい場所だから。先輩が後輩を可愛がり、まるで学校の延長みたいな雰囲気で、仕事を覚えていく。</p>
+        <p>超高圧だけで40年。<strong>日本でもほとんどない専業集団</strong>の一員として、社会インフラの現場に立ってみませんか。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ══ VALUES ══ -->
+<section id="values" class="values-sec">
+  <div class="wrap">
+    <div class="sec-eyebrow rv">OUR VALUES</div>
+    <h2 class="sec-h2 rv">サンテックの<span style="color:var(--cyan)">3つの価値観</span></h2>
+    <div class="values-grid rv">
+
+      <!-- 技術 -->
+      <div class="val-card">
+        <div class="val-num">01</div>
+        <div class="val-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <path d="M24 12 L28 20 L38 21 L31 28 L33 38 L24 33 L15 38 L17 28 L10 21 L20 20 Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="val-en">EXPERTISE</div>
+        <div class="val-ja">専門技術</div>
+        <div class="val-desc">超高圧ウォータージェットの専業として、機械構造の知識から現場応用まで徹底的に習得。ロボットが届かない場所でも、ハンドガンで対応できる技術員を育てています。</div>
+      </div>
+
+      <!-- 安全 -->
+      <div class="val-card">
+        <div class="val-num">02</div>
+        <div class="val-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6 L38 12 L38 24 C38 32 32 39 24 42 C16 39 10 32 10 24 L10 12 Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+            <path d="M17 24 L22 29 L31 19" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="val-en">SAFETY FIRST</div>
+        <div class="val-ja">安全第一</div>
+        <div class="val-desc">大手ゼネコンから安全に関する表彰を受けた実績。設備の構造知識を深め、トラブル時にも現場で判断できる力を育てます。「安全」は技術の一部です。</div>
+      </div>
+
+      <!-- 信頼 -->
+      <div class="val-card">
+        <div class="val-num">03</div>
+        <div class="val-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20 C12 14 17 10 24 10 C31 10 36 14 36 20 C36 28 24 38 24 38 C24 38 12 28 12 20 Z" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+            <circle cx="24" cy="20" r="4" stroke="#38BDF8" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="val-en">TRUST &amp; BOND</div>
+        <div class="val-ja">信頼と絆</div>
+        <div class="val-desc">お客様に対しては「完了まで運命共同体」。仲間に対しては「先輩が後輩を可愛がる」。この2つの絆が、サンテックの仕事の質と定着率の高さを生んでいます。</div>
+      </div>
+
+    </div>
+
+    <!-- 合計式 -->
+    <div class="val-sum rv">
+      <span class="val-sum-item">専門技術</span>
+      <span class="val-sum-eq">+</span>
+      <span class="val-sum-item">安全第一</span>
+      <span class="val-sum-eq">+</span>
+      <span class="val-sum-item">信頼と絆</span>
+      <span class="val-sum-eq">=</span>
+      <span class="val-sum-result">社会インフラを守る仕事</span>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ══ ENVIRONMENT ══ -->
+<section id="environment" class="sec">
+  <div class="wrap">
+    <div class="sec-eyebrow rv">WORK ENVIRONMENT</div>
+    <h2 class="sec-h2 rv">サンテックで<span style="color:var(--cyan)">働く環境</span></h2>
+    <div class="env-grid">
+
+      <div class="env-card rv">
+        <div class="env-card-img" style="background-image:url('./images/worker_handgun.jpg');background-position:center 20%;">
+          <div class="env-card-stat">
+            <div class="env-card-num">5<small>年</small></div>
+            <div class="env-card-label">YEARS TO FULL SKILL</div>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <div class="env-card-title">5年かけて、一人前に。</div>
+          <div class="env-card-desc">入社してすぐ現場に出るわけではありません。まず機械の構造・知識を徹底的に学び、その上で少しずつ現場を経験。知識の応用が現場力になる——だから各現場が異なっても対応できます。</div>
+        </div>
+      </div>
+
+      <div class="env-card rv">
+        <div class="env-card-img" style="background-image:url('./images/team_photo.jpg');background-position:center 35%;">
+          <div class="env-card-stat">
+            <div class="env-card-num">10〜20<small>年選手</small></div>
+            <div class="env-card-label">LONG-TERM MEMBERS</div>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <div class="env-card-title">辞める人がいない職場。</div>
+          <div class="env-card-desc">10年、15年、20年のベテランが活躍しています。定着率の高さの秘密は「居心地の良さ」。先輩が後輩を可愛がる文化、学校の延長みたいな仲間との関係が、長く働ける環境をつくっています。</div>
+        </div>
+      </div>
+
+      <div class="env-card rv">
+        <div class="env-card-img" style="background-image:url('./images/worker_site.jpg');background-position:center 40%;">
+          <div class="env-card-stat">
+            <div class="env-card-num">14<small>名</small></div>
+            <div class="env-card-label">SMALL &amp; STRONG TEAM</div>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <div class="env-card-title">少数精鋭、全員が主役。</div>
+          <div class="env-card-desc">従業員14名（5グループ編成可能）の精鋭集団。大きな組織では埋もれてしまうような存在でも、サンテックではすぐに現場のキーマンになれます。一人ひとりの技術が会社を支えています。</div>
+        </div>
+      </div>
+
+      <div class="env-card rv">
+        <div class="env-card-img" style="background-image:url('./images/worker_plant.jpg');background-position:center 30%;">
+          <div class="env-card-stat">
+            <div class="env-card-num">3<small>拠点</small></div>
+            <div class="env-card-label">LOCATIONS</div>
+          </div>
+        </div>
+        <div class="env-card-body">
+          <div class="env-card-title">九州・沖縄で活躍できる。</div>
+          <div class="env-card-desc">北九州本社・福岡営業所・沖縄事業所の3拠点体制。各地の社会インフラ現場に携わるため、様々な環境・規模の施工を経験できます。デザイン・芸術系の出身者も活躍中です。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ══ JOBS ══ -->
+<section id="jobs" class="sec" style="padding-top:80px;">
+  <div class="wrap">
+    <div class="sec-eyebrow rv">JOB OPENINGS</div>
+    <h2 class="sec-h2 rv">募集職種</h2>
+
+    <!-- 現場技術員 -->
+    <div class="job-card rv">
+      <div class="job-header" style="background-image:url('./images/worker_site.jpg');">
+        <div>
+          <div class="job-tag">TECHNICAL STAFF</div>
+          <div class="job-title">現場技術員（超高圧ウォータージェット施工）</div>
+        </div>
+        <div class="job-badge">随時募集中</div>
+      </div>
+      <div class="job-desc">
+        超高圧ウォータージェット工法による施工（コンクリート劣化部除去・塗装剥離・洗浄など）を行う技術員として活躍していただきます。未経験歓迎。入社後は機械知識の習得から始め、ベテラン社員のサポートのもと、段階的に現場経験を積んでいただきます。
+      </div>
+      <table class="job-table">
+        <tr>
+          <th>雇用形態</th>
+          <td><strong>正社員</strong></td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>
+            <ul>
+              <li>高卒以上</li>
+              <li>普通自動車免許（MT）</li>
+              <li>未経験歓迎（業界経験者・施工管理技士資格者優遇）</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>
+            本人の希望・各拠点の状況に合わせて配属<br>
+            <ul style="margin-top:6px;">
+              <li>事業センター：北九州市小倉南区横代３４１−１</li>
+              <li>福岡営業所：福岡県糟屋郡新宮町上府北３丁目６−８</li>
+              <li>沖縄事業所：沖縄市住吉１丁目１５−１３</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>当社規定により処遇（年齢・経験等を考慮）<br>※別途各種手当支給</td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>8:00〜17:00（平日）</td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>
+            週休二日制（土日）<br>
+            夏季・年末年始・有給・慶弔休暇<br>
+            ※詳細は面談にて
+          </td>
+        </tr>
+        <tr>
+          <th>応募方法</th>
+          <td>下記ボタンよりお問い合わせください。担当者より折り返しご連絡いたします。</td>
+        </tr>
+      </table>
+      <div class="job-footer">
+        <a href="#cta" class="btn-apply">応募・お問い合わせ →</a>
+        <a href="santech_company.html" class="btn-contact">会社概要を見る</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section id="cta" class="cta-sec">
+  <div class="cta-glow"></div>
+  <div class="sec-eyebrow rv" style="justify-content:center;margin-bottom:20px;">CONTACT</div>
+  <h2 class="rv">採用に関するお問い合わせ</h2>
+  <p class="rv">まずはお気軽にお電話またはメールでご連絡ください。<br>担当者が丁寧にご対応いたします。</p>
+  <div class="cta-tel rv en">093-475-7263</div>
+  <div class="cta-tel-note rv">平日 8:00〜17:00</div>
+  <div class="cta-btns rv">
+    <a href="mailto:info@santec-wj.jp" class="btn-apply">メールで問い合わせる</a>
+    <a href="santech_company.html" class="btn-contact">会社概要を見る</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-totop">
+    <a href="santech_top.html" class="ft-totop-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      TOP
+    </a>
+  </div>
+  <div class="ft-photo"></div>
+  <div class="ft-photo-grad"></div>
+  <div class="ft-body">
+    <div class="ft-grid">
+      <div class="ft-col-logo">
+        <div class="ft-logo en"><b>SUN</b>TECH</div>
+        <div class="ft-tagline">超高圧ウォータージェット専業<br>国内でも数少ない専門施工会社</div>
+        <div class="ft-tel en">093-475-7263</div>
+        <div class="ft-tel-label">TEL（平日 8:00〜17:00）</div>
+        <div class="ft-addr">
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">事業センター</strong><br>
+          福岡県北九州市八幡西区木屋瀬3丁目16番1号<br>
+          FAX：093-475-7368<br><br>
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">福岡営業所</strong><br>
+          〒811-0123 福岡県糟屋郡新宮町上府北３丁目６−８<br><br>
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">沖縄事業所</strong><br>
+          〒904-0003 沖縄市住吉１丁目１５−１３
+        </div>
+      </div>
+      <nav class="ft-col">
+        <h4 class="en">COMPANY</h4>
+        <ul>
+          <li><a href="santech_top.html">トップページ</a></li>
+          <li><a href="santech_company.html">会社概要</a></li>
+          <li><a href="santech_company.html">代表挨拶</a></li>
+          <li><a href="santech_company.html#history">企業理念・沿革</a></li>
+          <li><a href="santech_company.html#overview">拠点・アクセス</a></li>
+          <li><a href="santech_recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col">
+        <h4 class="en">TECHNOLOGY</h4>
+        <ul>
+          <li><a href="santech_technology.html">工法概要</a></li>
+          <li><a href="santech_technology.html#equipment">装置構成</a></li>
+          <li><a href="santech_technology.html#applications">コンクリート構造物</a></li>
+          <li><a href="santech_technology.html#applications">プラント・工場</a></li>
+          <li><a href="santech_施工事例.html">船舶・港湾</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col">
+        <h4 class="en">WORKS</h4>
+        <ul>
+          <li><a href="santech_施工事例.html">施工事例一覧</a></li>
+          <li><a href="santech_cases_suido.html">上下水道施設</a></li>
+          <li><a href="santech_cases_bridge.html">橋脚・橋梁</a></li>
+          <li><a href="santech_cases_ship.html">船・港湾</a></li>
+          <li><a href="santech_contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy en">© 2024 SUNTECH Co., Ltd. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');}});
+},{threshold:0.12});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* ══ HAMBURGER MENU ══ */
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('navMobile');
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  navMobile.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  const isOpen = navMobile.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+</script>
+
+<!-- ══ MOBILE NAV OVERLAY ══ -->
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+<!-- ══ MOBILE CONTACT BAR ══ -->
+<div class="mob-bar">
+  <a href="tel:0934757263" class="mob-bar-tel en">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    093-475-7263
+  </a>
+  <a href="mailto:info@santec-wj.jp" class="mob-bar-mail">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    メールで問い合わせ
+  </a>
+</div>
+
+</body>
+</html>

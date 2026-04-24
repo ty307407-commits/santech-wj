@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施工事例 | 株式会社サンテック</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#04090f;
+  --navy:#0a1628;
+  --blue:#0f2a6b;
+  --cyan:#38BDF8;
+  --cyan2:#7DD3FC;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden;}
+.en{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+
+/* ft-totop */
+.ft-totop{text-align:center;padding:20px 0 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0;}
+.ft-totop-btn{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-decoration:none;transition:color 0.2s;}
+.ft-totop-btn:hover{color:var(--cyan);}
+/* ══ HEADER ══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;transition:all 0.5s;}
+.hdr.on{background:rgba(10,22,48,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.1);}
+.hdr-logo{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;font-size:19px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:1px;}
+.hdr-logo b{color:var(--cyan);}
+.hdr-nav{display:flex;align-items:center;gap:28px;}
+.hdr-nav a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+.hdr-nav a:hover,.hdr-nav a.active{color:var(--cyan);}
+.hdr-nav .nav-cta{color:var(--cyan)!important;border:1px solid var(--cyan);padding:8px 20px;border-radius:4px;}
+.hdr-nav .nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+
+/* ══ PAGE HERO ══ */
+.page-hero{position:relative;padding:100px 52px 48px;background:#eef4fb;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,#eef4fb);}
+.ph-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.ph-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.ph-line{width:36px;height:1px;background:var(--cyan);}
+.ph-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,6vw,80px);font-weight:900;line-height:0.95;letter-spacing:-1px;color:#fff;margin-bottom:12px;}
+.ph-title span{color:var(--cyan);}
+.ph-sub{font-size:18px;font-weight:700;color:rgba(255,255,255,0.75);margin-bottom:8px;}
+.ph-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.8;max-width:560px;margin-bottom:24px;}
+.ph-stats{display:flex;gap:36px;}
+.ph-stat .val{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:900;color:var(--cyan);line-height:1;}
+.ph-stat .val small{font-size:14px;color:rgba(255,255,255,0.45);}
+.ph-stat .lbl{font-size:10px;color:rgba(255,255,255,0.38);margin-top:3px;letter-spacing:1px;}
+
+/* ══ SECTION LAYOUT ══ */
+.section-wrap{max-width:1100px;margin:0 auto;padding:0 52px;}
+.section-label{display:flex;align-items:center;gap:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:3px;padding:36px 0 16px;text-transform:uppercase;}
+.section-label::after{content:'';flex:1;height:1px;background:rgba(56,189,248,0.15);}
+
+/* ══ MAP AREA ══ */
+.map-intro{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:12px 18px;font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.map-intro span{color:var(--cyan);}
+
+.map-outer{position:relative;width:100%;border-radius:12px;overflow:visible;border:1px solid rgba(56,189,248,0.12);box-shadow:0 0 60px rgba(56,189,248,0.06);}
+.map-outer::before{content:'';display:block;padding-top:56.25%;}
+.map-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;}
+
+/* map buttons */
+.fac-btn{position:absolute;transform:translate(-50%,-50%);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:5;}
+.btn-circle{width:32px;height:32px;border-radius:50%;background:var(--cyan);border:2px solid rgba(255,255,255,0.4);box-shadow:0 2px 12px rgba(56,189,248,0.5);display:flex;align-items:center;justify-content:center;transition:transform 0.15s,box-shadow 0.15s;flex-shrink:0;}
+.fac-btn:hover .btn-circle{transform:scale(1.18);box-shadow:0 4px 20px rgba(56,189,248,0.75);}
+.btn-circle svg{width:14px;height:14px;stroke:var(--bg);stroke-width:2.5;stroke-linecap:round;}
+.btn-label{background:rgba(4,9,15,0.82);color:var(--cyan2);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;border:1px solid rgba(56,189,248,0.25);backdrop-filter:blur(8px);}
+
+/* Popup */
+#popup{display:none;position:absolute;background:rgba(10,22,40,0.96);border:1px solid rgba(56,189,248,0.25);border-top:2px solid var(--cyan);border-radius:12px;padding:16px 18px 14px;box-shadow:0 12px 48px rgba(0,0,0,0.6);width:240px;z-index:20;backdrop-filter:blur(16px);}
+#popup.active{display:block;}
+#popup-close{position:absolute;top:8px;right:12px;font-size:16px;color:rgba(255,255,255,0.3);cursor:pointer;line-height:1;user-select:none;
+}
+#popup-close:hover{color:#fff;}
+#popup h3{font-size:14px;font-weight:800;color:#fff;margin-bottom:7px;padding-right:16px;}
+#popup p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:12px;}
+#popup a{display:inline-block;background:var(--cyan);color:var(--bg);padding:6px 16px;border-radius:4px;font-size:11px;font-weight:700;text-decoration:none;transition:opacity 0.18s;}
+#popup a:hover{opacity:0.85;}
+#popup .coming-tag{display:inline-block;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);padding:5px 14px;border-radius:4px;font-size:11px;font-weight:600;}
+
+/* ══ CATEGORY GRID ══ */
+.categories{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;padding-bottom:80px;}
+
+.cat-card{background:rgba(10,22,40,0.7);border:1px solid rgba(56,189,248,0.1);border-radius:12px;overflow:hidden;text-decoration:none;transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;display:flex;position:relative;backdrop-filter:blur(8px);}
+.cat-card.has-link:hover{transform:translateY(-3px);border-color:rgba(56,189,248,0.35);box-shadow:0 8px 32px rgba(56,189,248,0.1);}
+.cat-card.no-link{opacity:0.5;cursor:default;}
+
+.cat-thumb-small{width:110px;min-height:100px;flex-shrink:0;background:rgba(56,189,248,0.05);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.cat-thumb-small img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85);}
+.cat-thumb-small .ph-icon{font-size:32px;opacity:0.3;}
+
+.cat-body-h{padding:14px 16px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:5px;}
+.cat-num-h{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:2px;}
+.cat-title-h{font-size:15px;font-weight:800;color:#fff;}
+.cat-desc-h{font-size:11px;color:rgba(255,255,255,0.42);line-height:1.55;}
+.cat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
+.cat-count-h{font-size:10px;color:rgba(255,255,255,0.28);}
+.cat-count-h strong{color:var(--cyan2);}
+.cat-arrow-h{width:24px;height:24px;border-radius:50%;background:rgba(56,189,248,0.1);color:var(--cyan);display:flex;align-items:center;justify-content:center;font-size:12px;transition:background 0.15s;}
+.cat-card.has-link:hover .cat-arrow-h{background:var(--cyan);color:var(--bg);}
+.coming-badge{position:absolute;top:8px;right:8px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.3);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.5px;}
+
+/* ══ PAGE HERO LIGHT TEXT ══ */
+.ph-title{color:#0f172a;}
+.ph-title span{color:var(--cyan);}
+.ph-sub{color:#0f172a;font-weight:700;}
+.ph-desc{color:#475569;}
+.ph-tag{color:var(--cyan);}
+.ph-stat .val small{color:#94a3b8;}
+.ph-stat .lbl{color:#94a3b8;}
+.page-hero::before{background-image:linear-gradient(rgba(15,23,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,0.05) 1px,transparent 1px);}
+
+/* ══ LIGHT CONTENT ══ */
+body{background:#eef4fb;}
+.section-label{color:var(--cyan);}
+.section-label::after{background:rgba(15,23,42,0.1);}
+.map-intro{background:rgba(56,189,248,0.06);border-color:rgba(56,189,248,0.2);color:#475569;}
+.map-intro span{color:var(--cyan);}
+.cat-card{background:#fff;border-color:rgba(15,23,42,0.08);box-shadow:0 2px 12px rgba(15,23,42,0.05);}
+.cat-card.has-link:hover{border-color:rgba(56,189,248,0.35);box-shadow:0 8px 28px rgba(56,189,248,0.1);}
+.cat-card.no-link{background:#f3f6fa;opacity:0.6;}
+.cat-title-h{color:#0f172a;}
+.cat-desc-h{color:#64748b;}
+.cat-count-h{color:#94a3b8;}
+.cat-count-h strong{color:var(--cyan);}
+
+/* ══ FOOTER ══ */
+footer{position:relative;overflow:hidden;background:#04090f;}
+.ft-photo{display:none;}
+.ft-photo-grad{display:none;}
+.ft-body{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:72px 52px 44px;}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+@media(max-width:960px){.ft-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+.ft-logo{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:14px;}
+.ft-logo b{color:var(--cyan);}
+.ft-tagline{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.8;margin-bottom:24px;}
+.ft-tel{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;}
+.ft-tel-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:14px;}
+.ft-addr{font-size:13px;color:rgba(255,255,255,0.65);line-height:2.0;}
+.ft-col h4{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:3px;margin-bottom:18px;}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col a{color:rgba(255,255,255,0.4);font-size:12px;text-decoration:none;transition:color 0.2s;}
+.ft-col a:hover{color:#fff;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+.ft-copy{color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:0.5px;}
+
+
+/* ══ HAMBURGER MENU ══ */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover,.nav-mobile a:active{color:var(--cyan);}
+.nav-mobile .nav-cta-m{color:var(--cyan)!important;border:1px solid var(--cyan);padding:14px 48px;border-radius:4px;}
+/* ══ MOBILE CONTACT BAR ══ */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;grid-template-columns:1fr 1fr;height:52px;}
+.mob-bar a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.5px;}
+.mob-bar-tel{background:var(--cyan);color:#04090f;}
+.mob-bar-mail{background:#0a1628;color:#fff;border-top:1px solid rgba(56,189,248,0.25);}
+
+/* ══ MOBILE ══ */
+@media(max-width:640px){
+  .hdr,.hdr.on{padding:12px 16px;}
+  .hdr-logo{font-size:16px;white-space:nowrap;}
+  .hdr-nav{display:none;}
+  .nav-hamburger{display:flex;}
+  .mob-bar{display:grid;}
+  body{padding-bottom:52px;}
+  .page-hero{padding:72px 16px 28px!important;}
+  .ph-title{font-size:clamp(36px,11vw,56px)!important;}
+  .ph-sub{font-size:15px;}
+  .ph-desc{font-size:12px;}
+  .ph-stats{flex-wrap:nowrap;gap:16px;}
+  .ph-stat .val{font-size:22px;}
+  .section-wrap{padding:0 16px!important;}
+  .categories{grid-template-columns:1fr;}
+  .ft-body{padding:48px 20px 32px;}
+  .ft-grid{grid-template-columns:1fr!important;gap:24px;}
+  .ft-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a class="hdr-logo" href="santech_top.html"><b>SUN</b>TECH　株式会社サンテック</a>
+  <nav class="hdr-nav">
+    <a href="santech_company.html">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html" class="active">WORKS</a>
+    <a href="santech_recruit.html">RECRUIT</a>
+    <a href="santech_top.html#cta" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="ph-inner">
+    <div class="ph-eyebrow">
+      <div class="ph-line"></div>
+      <div class="ph-tag">Case Studies</div>
+    </div>
+    <div class="ph-title en">WORKS</div>
+    <div class="ph-sub">施工事例</div>
+    <p class="ph-desc">超高圧ウォータージェット工法による施工実績。マップか下のカテゴリから各分野の事例をご覧ください。</p>
+    <div class="ph-stats">
+      <div class="ph-stat">
+        <div class="val en">9<small> カテゴリ</small></div>
+        <div class="lbl">CATEGORIES</div>
+      </div>
+      <div class="ph-stat">
+        <div class="val en">90<small>+件/年</small></div>
+        <div class="lbl">ANNUAL PROJECTS</div>
+      </div>
+      <div class="ph-stat">
+        <div class="val en">40<small>年</small></div>
+        <div class="lbl">YEARS OF EXPERTISE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+<div style="background:#eef4fb;padding-bottom:24px;">
+<div class="section-wrap">
+  <div class="section-label">Step 01 — 施工対応施設マップ</div>
+  <div class="map-intro">
+    <span>▸</span> マップ上の「＋」ボタンをクリックすると施設の説明と事例ページへのリンクが表示されます
+  </div>
+
+  <!-- ====== MAP ====== -->
+  <div class="map-outer" id="map-outer">
+    <img class="map-image" src="santech_map.png" alt="サンテック施工対応施設マップ" />
+
+    <!-- 1. 上下水道施設 -->
+    <div class="fac-btn" style="left:22%;top:33%;" data-id="suido">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">上下水道施設</span>
+    </div>
+    <!-- 2. 電車・車両 -->
+    <div class="fac-btn" style="left:43%;top:9%;" data-id="train">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">電車・車両</span>
+    </div>
+    <!-- 3. 道路工事 -->
+    <div class="fac-btn" style="left:14%;top:54%;" data-id="road">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">道路工事</span>
+    </div>
+    <!-- 4. 船・港湾 -->
+    <div class="fac-btn" style="left:11%;top:78%;" data-id="ship">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">船・港湾</span>
+    </div>
+    <!-- 5. ダム -->
+    <div class="fac-btn" style="left:70%;top:30%;" data-id="dam">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">ダム・水門</span>
+    </div>
+    <!-- 6. 発電所 -->
+    <div class="fac-btn" style="left:87%;top:44%;" data-id="plant-power">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">発電所</span>
+    </div>
+    <!-- 7. 橋梁 -->
+    <div class="fac-btn" style="left:52%;top:53%;" data-id="bridge">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">橋脚・橋梁</span>
+    </div>
+    <!-- 8. 新築建物 -->
+    <div class="fac-btn" style="left:47%;top:72%;" data-id="newbuild">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">新築建物</span>
+    </div>
+    <!-- 9. プラント -->
+    <div class="fac-btn" style="left:75%;top:72%;" data-id="plant">
+      <div class="btn-circle"><svg viewBox="0 0 14 14" fill="none"><line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/></svg></div>
+      <span class="btn-label">プラント・工場</span>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup">
+      <span id="popup-close">✕</span>
+      <h3 id="popup-title"></h3>
+      <p id="popup-desc"></p>
+      <span id="popup-link-wrap"></span>
+    </div>
+  </div>
+  <!-- ====== /MAP ====== -->
+
+</div><!-- /section-wrap -->
+</div><!-- /white bg -->
+
+<!-- Category Cards section -->
+<div class="section-wrap">
+  <div class="section-label">Step 02 — カテゴリから探す</div>
+  <div class="categories">
+
+    <!-- 新築建物 — 事例あり -->
+    <a class="cat-card has-link" href="santech_cases_newbuild.html" id="cat-newbuild">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1ROl-dFER7w0_XgMx62XUeOxa9AiZbZKg&sz=w300"
+          alt="新築建物"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🏢</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 02</div>
+        <div class="cat-title-h">新築建物・建築外壁</div>
+        <div class="cat-desc-h">銀行・商業施設の外壁コンクリート処理。ハイブリッドピーリング工法。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>2</strong> 件</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 上下水道施設 -->
+    <a class="cat-card has-link" href="santech_cases_suido.html" id="cat-suido">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1YRz5w3VbNtmXu8vl3kKYiwMxu7DLLP2A&sz=w300"
+          alt="上下水道施設"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">💧</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 01</div>
+        <div class="cat-title-h">上下水道施設</div>
+        <div class="cat-desc-h">処理槽・貯水タンクのコンクリート劣化除去。全国トップクラスの実績。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 橋脚・橋梁 -->
+    <a class="cat-card has-link" href="santech_cases_bridge.html" id="cat-bridge">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc&sz=w300"
+          alt="橋脚・橋梁"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🌉</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 03</div>
+        <div class="cat-title-h">橋脚・橋梁</div>
+        <div class="cat-desc-h">高速道路・橋梁の床版剥離、橋脚コンクリート劣化除去。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 道路工事 -->
+    <a class="cat-card has-link" href="santech_cases_road.html" id="cat-road">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1JBd7s8dnkC6Gc_bdHQGWdwhRJ_qTBL4a&sz=w300"
+          alt="道路工事"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🛣️</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 04</div>
+        <div class="cat-title-h">道路工事</div>
+        <div class="cat-desc-h">路面の劣化コンクリート除去・防水下地処理。交通インフラの長寿命化。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- ダム・水門 -->
+    <a class="cat-card has-link" href="santech_cases_dam.html" id="cat-dam">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1d1Vxon12vyQ6ofw-bbatRBXhKb3uRtbr&sz=w300"
+          alt="ダム・水門"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🏞️</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 05</div>
+        <div class="cat-title-h">ダム・水門</div>
+        <div class="cat-desc-h">ダム堤体・水門のコンクリート表面処理・劣化除去。大型インフラ補修。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 発電所 -->
+    <a class="cat-card has-link" href="santech_cases_power.html" id="cat-power">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1-f5_2sxezOsj8YRqjArw_X_YdSPZPpxv&sz=w300"
+          alt="発電所"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">⚡</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 06</div>
+        <div class="cat-title-h">発電所</div>
+        <div class="cat-desc-h">発電プラントの洗浄・塗膜除去。火気厳禁現場にも安全対応。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 船・港湾 -->
+    <a class="cat-card has-link" href="santech_cases_ship.html" id="cat-ship">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1uWgfuo4r0lpatBcZeBfbzM84wzGd475K&sz=w300"
+          alt="船・港湾"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🚢</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 07</div>
+        <div class="cat-title-h">船・港湾</div>
+        <div class="cat-desc-h">船体の塗膜剥離、造船所設備の洗浄。塩害・海洋環境下に対応。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 電車・車両 -->
+    <a class="cat-card has-link" href="santech_cases_train.html" id="cat-train">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=1voqQnIlDMMJTvOeLVR5N5CFae8SJcMqs&sz=w300"
+          alt="電車・車両"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🚃</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 08</div>
+        <div class="cat-title-h">電車・車両</div>
+        <div class="cat-desc-h">JR等の鉄道車両の塗膜剥離、鉄道施設の洗浄・表面処理。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- プラント・工場 -->
+    <a class="cat-card has-link" href="santech_cases_plant.html" id="cat-plant">
+      <div class="cat-thumb-small">
+        <img src="https://drive.google.com/thumbnail?id=11jY8GYDHSX1jErFdhFCQtkxbY54XKkX3&sz=w300"
+          alt="プラント・工場"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="ph-icon" style="display:none">🏭</div>
+      </div>
+      <div class="cat-body-h">
+        <div class="cat-num-h">CATEGORY 09</div>
+        <div class="cat-title-h">プラント・工場</div>
+        <div class="cat-desc-h">ガスタンク解体・配管洗浄。火気厳禁の高リスク施工に多数の実績。</div>
+        <div class="cat-foot">
+          <div class="cat-count-h">事例 <strong>1</strong> 件（暫定）</div>
+          <div class="cat-arrow-h">→</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-totop">
+    <a href="santech_top.html" class="ft-totop-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      TOP
+    </a>
+  </div>
+  <div class="ft-photo"></div>
+  <div class="ft-photo-grad"></div>
+  <div class="ft-body">
+    <div class="ft-grid">
+      <div class="ft-col-logo">
+        <div class="ft-logo en"><b>SUN</b>TECH</div>
+        <div class="ft-tagline">超高圧ウォータージェット専業<br>国内でも数少ない専門施工会社</div>
+        <div class="ft-tel en">093-475-7263</div>
+        <div class="ft-tel-label">TEL（平日 8:00〜17:00）</div>
+        <div class="ft-addr">
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">事業センター</strong><br>
+          福岡県北九州市八幡西区木屋瀬3丁目16番1号<br>
+          FAX：093-475-7368<br><br>
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">福岡営業所</strong><br>
+          〒811-0123 福岡県糟屋郡新宮町上府北３丁目６−８<br><br>
+          <strong style="color:rgba(255,255,255,0.45);font-size:10px;">沖縄事業所</strong><br>
+          〒904-0003 沖縄市住吉１丁目１５−１３
+        </div>
+      </div>
+      <nav class="ft-col">
+        <h4 class="en">COMPANY</h4>
+        <ul>
+          <li><a href="santech_top.html">トップページ</a></li>
+          <li><a href="santech_company.html">会社概要</a></li>
+          <li><a href="santech_company.html">代表挨拶</a></li>
+          <li><a href="santech_company.html#history">企業理念・沿革</a></li>
+          <li><a href="santech_company.html#overview">拠点・アクセス</a></li>
+          <li><a href="santech_recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col">
+        <h4 class="en">TECHNOLOGY</h4>
+        <ul>
+          <li><a href="santech_technology.html">工法概要</a></li>
+          <li><a href="santech_technology.html#equipment">装置構成</a></li>
+          <li><a href="santech_technology.html#applications">コンクリート構造物</a></li>
+          <li><a href="santech_technology.html#applications">プラント・工場</a></li>
+          <li><a href="santech_施工事例.html">船舶・港湾</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col">
+        <h4 class="en">WORKS</h4>
+        <ul>
+          <li><a href="santech_施工事例.html">施工事例一覧</a></li>
+          <li><a href="santech_cases_suido.html">上下水道施設</a></li>
+          <li><a href="santech_cases_bridge.html">橋脚・橋梁</a></li>
+          <li><a href="santech_cases_ship.html">船・港湾</a></li>
+          <li><a href="santech_top.html#cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy en">© 2024 SUNTECH Co., Ltd. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Map JavaScript -->
+<script>
+const FACILITIES = {
+  suido:       { name: '上下水道処理施設',  desc: '処理槽・貯水タンクのコンクリート劣化部除去。ロボットが入れない内部構造にもハンドガンで対応。全国トップクラスの施工実績。', link: 'santech_cases_suido.html' },
+  train:       { name: '鉄道車両・設備',    desc: 'JR等の鉄道車両の塗膜剥離、鉄道施設の洗浄・表面処理。超高圧水によるスピーディかつ確実な施工が強みです。',              link: 'santech_cases_train.html' },
+  road:        { name: '道路リフレッシュ工事', desc: '路面の劣化コンクリート除去・防水下地処理。超高圧水による精密な表面切削で交通インフラの長寿命化に貢献します。',     link: 'santech_cases_road.html' },
+  ship:        { name: '船体・港湾施設',    desc: '船体の塗膜剥離、造船所設備の洗浄。塩害・海洋環境下でも確実に対応できる技術と実績を持っています。',                link: 'santech_cases_ship.html' },
+  dam:         { name: 'ダム・水門・堤体',  desc: 'ダム堤体・水門のコンクリート表面処理、劣化除去。大型インフラ構造物の維持・補修に欠かせない下地作りを担います。',       link: 'santech_cases_dam.html' },
+  'plant-power': { name: '発電所・エネルギー施設', desc: '発電プラントの洗浄・塗膜除去。地熱・火力など各種エネルギー施設での施工実績があります。火気厳禁の現場でも対応可能。', link: 'santech_cases_power.html' },
+  bridge:      { name: '橋脚・高速道路橋梁', desc: '高速道路・橋梁の床版剥離、橋脚コンクリート劣化除去。耐震補強前の確実な下地作りを手がけています。',             link: 'santech_cases_bridge.html' },
+  newbuild:    { name: '新築・建設現場',    desc: '銀行・商業施設の外壁コンクリート表面処理、型枠剥離、ハイブリッドピーリング工法。2事例の施工写真を公開中。',        link: 'santech_cases_newbuild.html' },
+  plant:       { name: 'プラント・石油化学工場', desc: 'ガスタンク解体・切断（火気厳禁環境）、配管・設備洗浄。複雑なプラント環境での高リスク施工に多数の実績があります。', link: 'santech_cases_plant.html' },
+};
+
+const popup = document.getElementById('popup');
+const outer = document.getElementById('map-outer');
+
+function showPopup(id, btnEl) {
+  const f = FACILITIES[id];
+  if (!f) return;
+  document.getElementById('popup-title').textContent = f.name;
+  document.getElementById('popup-desc').textContent  = f.desc;
+  const wrap = document.getElementById('popup-link-wrap');
+  if (f.link) {
+    wrap.innerHTML = `<a href="${f.link}">施工事例を見る →</a>`;
+  } else {
+    wrap.innerHTML = `<span class="coming-tag">施工事例 準備中</span>`;
+  }
+  popup.classList.add('active');
+
+  const outerRect = outer.getBoundingClientRect();
+  const btnRect   = btnEl.getBoundingClientRect();
+  let left = (btnRect.left - outerRect.left) + btnRect.width / 2 + 14;
+  let top  = (btnRect.top  - outerRect.top)  - 20;
+  if (left + 250 > outer.offsetWidth)  left = (btnRect.left - outerRect.left) - 256;
+  if (left < 8) left = 8;
+  if (top < 8)  top  = (btnRect.top - outerRect.top) + btnRect.height + 8;
+  if (top + 200 > outer.offsetHeight) top = outer.offsetHeight - 208;
+  popup.style.left = left + 'px';
+  popup.style.top  = top  + 'px';
+}
+
+document.querySelectorAll('.fac-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const id = btn.dataset.id;
+    if (popup.classList.contains('active') && popup.dataset.current === id) {
+      popup.classList.remove('active');
+      return;
+    }
+    popup.dataset.current = id;
+    showPopup(id, btn);
+  });
+});
+document.getElementById('popup-close').addEventListener('click', () => popup.classList.remove('active'));
+document.addEventListener('click', e => {
+  if (!e.target.closest('.fac-btn') && !e.target.closest('#popup')) popup.classList.remove('active');
+});
+
+// Scroll to category card when popup link clicked
+document.querySelectorAll('.fac-btn').forEach(btn => {
+  btn.addEventListener('dblclick', e => {
+    e.stopPropagation();
+    const catMap = { suido:'cat-suido', train:'cat-train', road:'cat-road', ship:'cat-ship',
+                     dam:'cat-dam', 'plant-power':'cat-power', bridge:'cat-bridge',
+                     newbuild:'cat-newbuild', plant:'cat-plant' };
+    const el = document.getElementById(catMap[btn.dataset.id]);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+});
+</script>
+
+<script>
+(function(){
+  var h=document.getElementById('hdr');
+  if(!h) return;
+  // このページはダークヒーロー背景なのでスクロール位置に関わらず常時表示
+  h.classList.add('on');
+  window.addEventListener('scroll',function(){
+    h.classList.toggle('on', window.scrollY>40 || true);
+  },{passive:true});
+})();
+
+/* ══ HAMBURGER MENU ══ */
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('navMobile');
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  navMobile.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  const isOpen = navMobile.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+</script>
+
+<!-- ══ MOBILE NAV OVERLAY ══ -->
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+<!-- ══ MOBILE CONTACT BAR ══ -->
+<div class="mob-bar">
+  <a href="tel:0934757263" class="mob-bar-tel en">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    093-475-7263
+  </a>
+  <a href="mailto:info@santec-wj.jp" class="mob-bar-mail">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    メールで問い合わせ
+  </a>
+</div>
+
+</body>
+</html>

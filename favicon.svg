@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- 背景：ダーク -->
+  <rect width="32" height="32" rx="6" fill="#04090f"/>
+  <!-- シアンのアクセントライン（ウォータージェットイメージ） -->
+  <rect x="4" y="14" width="24" height="2" rx="1" fill="#38BDF8" opacity="0.3"/>
+  <rect x="4" y="18" width="18" height="1.5" rx="0.75" fill="#38BDF8" opacity="0.2"/>
+  <!-- S文字（太字・シアン） -->
+  <text x="16" y="22" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="18" fill="#38BDF8" text-anchor="middle" letter-spacing="-1">S</text>
+  <!-- 下部のシアンライン -->
+  <rect x="8" y="26" width="16" height="2" rx="1" fill="#38BDF8"/>
+</svg>

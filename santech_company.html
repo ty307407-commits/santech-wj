@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社概要 | 株式会社サンテック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#04090f;
+  --navy:#0a1628;
+  --blue:#0f2a6b;
+  --cyan:#38BDF8;
+  --cyan2:#7DD3FC;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden;}
+.en{font-family:'Barlow Condensed','Noto Sans JP',sans-serif;}
+
+/* ft-totop */
+.ft-totop{text-align:center;padding:20px 0 0;border-bottom:1px solid rgba(255,255,255,0.06);margin-bottom:0;}
+.ft-totop-btn{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-decoration:none;transition:color 0.2s;}
+.ft-totop-btn:hover{color:var(--cyan);}
+/* ══ HEADER ══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:500;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;transition:all 0.5s;background:rgba(10,22,48,0.80);backdrop-filter:blur(20px);border-bottom:1px solid rgba(56,189,248,0.1);}
+.logo{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;text-decoration:none;letter-spacing:1px;}
+.logo b{color:var(--cyan);}
+.logo span{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.6);margin-left:10px;letter-spacing:0;}
+.nav{display:flex;align-items:center;gap:28px;}
+.nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s;}
+.nav a:hover{color:var(--cyan);}
+.nav a.active{color:#fff;}
+.nav-cta{color:var(--cyan)!important;border:1px solid var(--cyan);padding:7px 20px;border-radius:4px;transition:background 0.2s!important;}
+.nav-cta:hover{background:rgba(56,189,248,0.12)!important;}
+
+/* ══ PAGE HERO ══ */
+/* ══ PAGE HERO（リデザイン：コンパクト＆ライト）══ */
+.page-hero{
+  position:relative;
+  padding:96px 52px 40px;   /* ヘッダー高さ分 + 余白 */
+  background:#fff;
+  border-bottom:1px solid rgba(15,23,42,0.07);
+  overflow:hidden;
+}
+/* 右側に写真を装飾的に配置 */
+.page-hero-bg{
+  position:absolute;top:0;right:0;bottom:0;width:45%;
+  background-image:url('https://drive.google.com/thumbnail?id=1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc&sz=w1400');
+  background-size:cover;background-position:center;
+  opacity:0.18;
+  mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.6) 40%,#000 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,0.6) 40%,#000 100%);
+}
+/* 左側の縦ライン装飾 */
+.page-hero-bg::after{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(to bottom,transparent,var(--cyan),transparent);
+  opacity:0.4;
+}
+.page-hero-grad{display:none;}  /* 不要なので非表示 */
+.page-hero-content{
+  position:relative;z-index:2;
+  max-width:1100px;margin:0 auto;
+}
+.page-breadcrumb{
+  font-size:11px;color:#94a3b8;
+  letter-spacing:1.5px;margin-bottom:12px;
+  display:flex;align-items:center;gap:6px;
+}
+.page-breadcrumb a{color:#94a3b8;text-decoration:none;transition:color 0.2s;}
+.page-breadcrumb a:hover{color:var(--cyan);}
+.page-breadcrumb span{color:#cbd5e1;}
+.page-title-en{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:4px;margin-bottom:10px;}
+.page-title-en{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:4px;
+  color:var(--cyan);margin-bottom:8px;
+}
+.page-title{font-size:clamp(28px,4vw,46px);font-weight:700;line-height:1.1;color:#0f172a;}
+
+/* ══ MAIN CONTENT ══ */
+main{max-width:1100px;margin:0 auto;padding:72px 52px 100px;}
+
+/* ══ PRESIDENT MESSAGE ══ */
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--cyan);font-weight:600;letter-spacing:4px;margin-bottom:12px;}
+.sec-title{font-size:clamp(22px,3vw,34px);font-weight:700;margin-bottom:48px;line-height:1.2;}
+
+/* 全幅写真ヒーロー（髙橋さんスタイル） */
+.president-hero{position:relative;width:100%;height:560px;overflow:hidden;}
+.president-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+.ph-grad-l{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,9,15,0.68) 0%,rgba(4,9,15,0.35) 55%,rgba(4,9,15,0.05) 100%);}
+.ph-grad-b{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to bottom,transparent,#eef4fb);}
+.ph-overlay{position:absolute;inset:0;display:flex;align-items:center;padding:0 72px;}
+.ph-content{max-width:580px;}
+.ph-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);letter-spacing:4px;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:var(--cyan);}
+.ph-quote{font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.3;color:#fff;margin-bottom:32px;}
+.ph-quote .accent{color:var(--cyan);}
+.ph-sign{display:flex;flex-direction:column;gap:6px;}
+.ph-sign .pos{font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:2px;}
+.ph-sign .name{font-size:24px;font-weight:700;color:#fff;}
+.ph-sign .name-en{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:#94a3b8;letter-spacing:3px;}
+
+/* 代表挨拶 本文 */
+.president-body{margin-bottom:96px;}
+.pres-text{font-size:16px;color:rgba(255,255,255,0.65);line-height:2.1;margin-bottom:20px;max-width:760px;}
+.pres-text strong{color:rgba(255,255,255,0.92);}
+.pres-blockquote{border-left:2px solid var(--cyan);padding:18px 24px;margin:32px 0;background:rgba(56,189,248,0.04);}
+.pres-blockquote p{font-size:18px;font-weight:700;color:#fff;line-height:1.75;}
+
+/* ══ DIVIDER ══ */
+.sec-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(56,189,248,0.2),transparent);margin-bottom:80px;}
+
+/* ══ COMPANY OVERVIEW TABLE ══ */
+.overview-sec{margin-bottom:96px;}
+.overview-table{width:100%;border-collapse:collapse;}
+.overview-table tr{border-bottom:1px solid rgba(255,255,255,0.05);}
+.overview-table tr:first-child{border-top:1px solid rgba(255,255,255,0.05);}
+.overview-table th{
+  width:200px;
+  padding:22px 0 22px 0;
+  text-align:left;
+  font-size:14px;
+  font-weight:700;
+  color:rgba(255,255,255,0.45);
+  letter-spacing:1px;
+  vertical-align:top;
+}
+.overview-table td{
+  padding:22px 0 22px 24px;
+  font-size:16px;
+  color:rgba(255,255,255,0.80);
+  line-height:1.9;
+  vertical-align:top;
+}
+.overview-table td strong{color:#fff;font-weight:700;}
+.overview-table td .tag{
+  display:inline-block;
+  border:1px solid rgba(56,189,248,0.3);
+  color:var(--cyan);
+  font-size:10px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:3px;
+  margin-right:6px;
+  letter-spacing:1px;
+  font-family:'Barlow Condensed',sans-serif;
+}
+.branch-list{display:flex;flex-direction:column;gap:10px;}
+.branch-item{}
+.branch-name{font-size:11px;font-weight:700;color:var(--cyan);margin-bottom:2px;letter-spacing:1px;}
+.branch-addr{font-size:13px;color:rgba(255,255,255,0.65);}
+
+/* ══ HISTORY ══ */
+.history-sec{margin-bottom:96px;}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--cyan),rgba(56,189,248,0.1));}
+.tl-item{position:relative;margin-bottom:32px;}
+.tl-dot{position:absolute;left:-32px;top:6px;width:13px;height:13px;border-radius:50%;border:2px solid var(--cyan);background:var(--bg);transition:background 0.2s;}
+.tl-item:first-child .tl-dot{background:var(--cyan);}
+.tl-year{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;}
+.tl-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;}
+.tl-text strong{color:rgba(255,255,255,0.88);}
+
+/* ══ CTA ══ */
+.page-cta{position:relative;padding:72px 52px;text-align:center;overflow:hidden;border-radius:12px;background:var(--navy);border:1px solid rgba(56,189,248,0.1);}
+.page-cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:300px;background:radial-gradient(circle,rgba(56,189,248,0.1) 0%,transparent 70%);pointer-events:none;}
+.page-cta h2{position:relative;font-size:clamp(20px,3vw,32px);font-weight:700;margin-bottom:12px;}
+.page-cta p{position:relative;font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:32px;}
+.page-cta-tel{position:relative;font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--cyan);letter-spacing:3px;margin-bottom:6px;text-shadow:0 0 32px rgba(56,189,248,0.3);}
+.page-cta-note{position:relative;font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:32px;}
+.btn-main{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:#04090f;font-size:13px;font-weight:700;padding:14px 30px;border-radius:4px;text-decoration:none;letter-spacing:0.5px;transition:all 0.25s;}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(56,189,248,0.35);}
+
+/* ══ FOOTER ══ */
+footer{position:relative;overflow:hidden;margin-top:0;}
+.ft-photo{display:none;}
+.ft-photo-grad{display:none;}
+.ft-body{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:72px 52px 44px;}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+@media(max-width:960px){.ft-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+.ft-col-logo .ft-logo{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:1px;margin-bottom:16px;}
+.ft-col-logo .ft-logo b{color:var(--cyan);}
+.ft-col-logo .ft-tagline{font-size:13px;color:rgba(255,255,255,0.60);line-height:1.8;margin-bottom:24px;}
+.ft-tel{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;color:var(--cyan);letter-spacing:2px;margin-bottom:4px;}
+.ft-tel-label{font-size:12px;color:rgba(255,255,255,0.55);letter-spacing:1px;margin-bottom:16px;}
+.ft-addr{font-size:13px;color:rgba(255,255,255,0.65);line-height:2.0;}
+.ft-col-nav h4{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:3px;margin-bottom:18px;}
+.ft-col-nav ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-col-nav a{color:rgba(255,255,255,0.70);font-size:13px;text-decoration:none;transition:color 0.2s;}
+.ft-col-nav a:hover{color:#fff;}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+.ft-copy{color:rgba(255,255,255,0.45);font-size:12px;letter-spacing:0.5px;}
+.ft-member{font-size:12px;color:rgba(255,255,255,0.45);}
+
+/* ══ REVEAL ══ */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 0.8s,transform 0.8s;}
+.rv.up{opacity:1;transform:translateY(0);}
+
+/* ══ LIGHT MAIN CONTENT ══ */
+main{background:#eef4fb;}
+.pres-text{color:#475569;}
+.pres-text strong{color:#0f172a;}
+.pres-blockquote{background:#fff;border-left-color:var(--cyan);}
+.pres-blockquote p{color:#0f172a;font-weight:600;}
+.sec-title{color:#0f172a;}
+.sec-label{color:var(--cyan);}
+.sec-divider{background:linear-gradient(90deg,transparent,rgba(56,189,248,0.25),transparent);}
+.overview-table tr{border-bottom-color:rgba(15,23,42,0.07);}
+.overview-table tr:first-child{border-top-color:rgba(15,23,42,0.07);}
+.overview-table th{color:#64748b;}
+.overview-table td{color:#0f172a;}
+.overview-table td strong{color:#0f172a;}
+.branch-name{color:var(--cyan);}
+.branch-addr{color:#475569;}
+.tl-dot{background:#eef4fb;border-color:var(--cyan);}
+.tl-item:first-child .tl-dot{background:var(--cyan);}
+.tl-text{color:#64748b;}
+.tl-text strong{color:#0f172a;}
+
+/* ══ HAMBURGER MENU ══ */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:600;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile{display:none;position:fixed;inset:0;background:rgba(4,9,15,0.97);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:color 0.2s;}
+.nav-mobile a:hover,.nav-mobile a:active{color:var(--cyan);}
+.nav-mobile .nav-cta-m{color:var(--cyan)!important;border:1px solid var(--cyan);padding:14px 48px;border-radius:4px;}
+/* ══ MOBILE CONTACT BAR ══ */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:400;grid-template-columns:1fr 1fr;height:52px;}
+.mob-bar a{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.5px;}
+.mob-bar-tel{background:var(--cyan);color:#04090f;}
+.mob-bar-mail{background:#0a1628;color:#fff;border-top:1px solid rgba(56,189,248,0.25);}
+
+/* ══ MOBILE ══ */
+@media(max-width:640px){
+  .hdr{padding:12px 16px;}
+  .logo{font-size:16px;white-space:nowrap;}
+  .logo span{display:none;}
+  .nav{gap:8px;}
+  .nav a{font-size:10px;letter-spacing:0.3px;}
+  .nav-cta{padding:5px 10px!important;}
+  .page-hero{padding:88px 20px 32px;}
+  .page-hero-bg{width:60%;opacity:0.12;}
+  .page-title{font-size:clamp(24px,8vw,36px);}
+  main{padding:48px 20px 72px;}
+  .president-hero{height:340px;}
+  .ph-overlay{padding:0 24px;}
+  .ph-quote{font-size:clamp(28px,8vw,44px);}
+  .overview-table th{width:100px;font-size:12px;}
+  .overview-table td{font-size:14px;padding:16px 0 16px 12px;}
+  .ft-body{padding:48px 20px 32px;}
+  .ft-grid{grid-template-columns:1fr!important;gap:24px;}
+  .ft-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <a class="logo" href="santech_top.html"><b>SUN</b>TECH<span>株式会社サンテック</span></a>
+  <nav class="nav">
+    <a href="santech_top.html">TOP</a>
+    <a href="santech_company.html" class="active">COMPANY</a>
+    <a href="santech_technology.html">TECHNOLOGY</a>
+    <a href="santech_施工事例.html">WORKS</a>
+    <a href="santech_recruit.html">RECRUIT</a>
+    <a href="#contact" class="nav-cta">CONTACT</a>
+  </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grad"></div>
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="santech_top.html">HOME</a> / COMPANY</div>
+    <div class="page-title-en">COMPANY</div>
+    <h1 class="page-title">会社概要</h1>
+  </div>
+</section>
+
+<!-- 代表挨拶：全幅横長写真＋左テキストオーバーレイ -->
+<section class="president-hero" id="greeting">
+  <img src="./images/president.png" alt="代表取締役 山下末男">
+  <div class="ph-grad-l"></div>
+  <div class="ph-grad-b"></div>
+  <div class="ph-overlay">
+    <div class="ph-content">
+      <div class="ph-eyebrow">PRESIDENT MESSAGE</div>
+      <h2 class="ph-quote">
+        うちは、<br>
+        <span class="accent">建物の外科医</span>だ。
+      </h2>
+      <div class="ph-sign">
+        <div class="pos">代表取締役</div>
+        <div class="name">山下 末男</div>
+        <div class="name-en">SUEO YAMASHITA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+
+  <!-- 代表挨拶 本文 -->
+  <section class="president-body rv">
+    <div class="sec-label">PRESIDENT MESSAGE</div>
+    <p class="pres-text">サンテックが超高圧ウォータージェット工法に出会ったのは、今から40年ほど前のことです。当時、ドイツやアメリカではコンクリートのはつりに使われていたこの技術が、日本ではほとんど知られていませんでした。建築外壁の洗浄からスタートし、塗装剥離、そして構造物の劣化部除去へ——全国を回りながら、一つひとつの現場で技術を磨いてきました。</p>
+    <p class="pres-text">国会議事堂の洗浄、阪神・淡路大震災の復旧工事、JR車両の塗装剥離、発電所・プラントの施工。それぞれの現場が教えてくれたのは、<strong>超高圧ウォータージェットは、他の工法では代替できない「専門技術」である</strong>ということでした。</p>
+    <div class="pres-blockquote">
+      <p>「超高圧一本で、40年。日本でこれができる会社が、どれほどあるか。私たちは、その誇りを持って仕事をしています。」</p>
+    </div>
+    <p class="pres-text">他社が断った現場でも、私たちは向き合います。超高圧専業だからこそ、できることがある——その信念が、今日のサンテックをつくりました。</p>
+    <p class="pres-text">私たちが守り続けてきた信念は、<strong>「信頼と信用」</strong>です。お客様が困っていたら、完了まで運命共同体として付き合う。途中で挫折しない。その姿勢が次の仕事へとつながり、30年以上の実績を積み重ねることができました。</p>
+    <p class="pres-text">超高圧ウォータージェット工法の専業会社として、これからも九州・沖縄の社会インフラを守り続けてまいります。</p>
+  </section>
+
+  <div class="sec-divider" style="margin-bottom:72px;"></div>
+
+  <!-- 会社概要 -->
+  <section class="overview-sec rv" id="overview">
+    <div class="sec-label">COMPANY PROFILE</div>
+    <h2 class="sec-title">会社概要</h2>
+
+    <table class="overview-table">
+      <tr>
+        <th>会社名</th>
+        <td><strong>株式会社サンテック</strong></td>
+      </tr>
+      <tr>
+        <th>設立</th>
+        <td>平成5年（1993年）<br><span style="font-size:12px;color:#94a3b8;">※超高圧ウォータージェット工法に特化した専業会社として独立創業。それ以前より昭和から業界に携わり、業界の草分け的存在。</span></td>
+      </tr>
+      <tr>
+        <th>代表取締役</th>
+        <td>山下 末男</td>
+      </tr>
+      <tr>
+        <th>事業内容</th>
+        <td>
+          超高圧ウォータージェット工法による各種施工<br>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;">
+            <span class="tag">コンクリート劣化部除去</span>
+            <span class="tag">塗膜剥離</span>
+            <span class="tag">構造物洗浄</span>
+            <span class="tag">プラント・タンク切断</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>従業員数</th>
+        <td>14名（5グループ編成対応）＋ 協力会社</td>
+      </tr>
+      <tr>
+        <th>所在地・拠点</th>
+        <td>
+          <div class="branch-list">
+            <div class="branch-item">
+              <div class="branch-name">本社 <span style="font-size:11px;color:#94a3b8;font-weight:400;">（登記上）</span></div>
+              <div class="branch-addr">〒800-0234　福岡県北九州市小倉南区貫弥生が丘２丁目１２−２５</div>
+            </div>
+            <div class="branch-item">
+              <div class="branch-name">事業センター</div>
+              <div class="branch-addr">〒802-0824　福岡県北九州市小倉南区横代３４１−１</div>
+            </div>
+            <div class="branch-item">
+              <div class="branch-name">福岡営業所</div>
+              <div class="branch-addr">〒811-0123　福岡県糟屋郡新宮町上府北３丁目６−８</div>
+            </div>
+            <div class="branch-item">
+              <div class="branch-name">沖縄事業所</div>
+              <div class="branch-addr">〒904-0003　沖縄県沖縄市住吉１丁目１５−１３</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>電話 / FAX</th>
+        <td>
+          <strong style="font-family:'Barlow Condensed',sans-serif;font-size:18px;letter-spacing:1px;">TEL：093-475-7263</strong><br>
+          FAX：093-475-7368
+        </td>
+      </tr>
+      <tr>
+        <th>メール</th>
+        <td>info@santec-wj.jp</td>
+      </tr>
+      <tr>
+        <th>所属団体</th>
+        <td>日本ウォータージェット施工協会　会員</td>
+      </tr>
+      <tr>
+        <th>施工実績</th>
+        <td>年間約90件（累計5,000件以上）<br><span style="font-size:12px;color:#94a3b8;">九州・沖縄全域および全国対応</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <div class="sec-divider"></div>
+
+  <!-- 沿革 -->
+  <section class="history-sec rv" id="history">
+    <div class="sec-label">HISTORY</div>
+    <h2 class="sec-title">沿革</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1980年代（昭和）</div>
+        <div class="tl-text">大阪の製鉄会社に勤務中、超高圧ウォータージェット技術に出会い、新規事業として日本への導入を開始。<strong>建築外壁の洗浄・塗装剥離</strong>からスタート。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1980年代後半</div>
+        <div class="tl-text"><strong>国会議事堂の洗浄</strong>を手がける（映像記録あり）。全国を回りながら超高圧ウォータージェット工法の普及・啓発に取り組む。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1990年代前半</div>
+        <div class="tl-text">JR鉄道車両の塗膜剥離、造船・船体の塗装剥離など適用分野を拡大。プラント・ガスタンクの切断解体（火気厳禁現場）にも対応開始。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1993年（平成5年）</div>
+        <div class="tl-text"><strong>株式会社サンテック　創業・独立。</strong>超高圧ウォータージェット工法の専業会社として九州・北九州市に設立。日本ウォータージェット施工協会の設立に参画。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1995年</div>
+        <div class="tl-text"><strong>阪神・淡路大震災の復旧工事</strong>に参加。コンクリート劣化部除去・耐震補強下地作りとして超高圧ウォータージェット工法が認知される転機となる。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2000年代〜現在</div>
+        <div class="tl-text">上下水道施設、橋梁・橋脚、ダム・水門、発電所、船舶・港湾など9分野に対応を拡大。九州・沖縄を中心に<strong>年間約90件</strong>の施工実績を積み上げる。大手ゼネコンより安全表彰を受賞。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta rv" id="contact">
+    <div class="page-cta-glow"></div>
+    <h2>施工のご相談・お見積りは<br>お気軽にどうぞ</h2>
+    <p>超高圧ウォータージェット工法の専業者として、最適なご提案をいたします。</p>
+    <div class="page-cta-tel">093-475-7263</div>
+    <div class="page-cta-note">平日 8:00〜17:00</div>
+    <a href="mailto:info@santec-wj.jp" class="btn-main">メールでお問い合わせ →</a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-totop">
+    <a href="santech_top.html" class="ft-totop-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      TOP
+    </a>
+  </div>
+  <div class="ft-photo"></div>
+  <div class="ft-photo-grad"></div>
+  <div class="ft-body">
+    <div class="ft-grid">
+      <div class="ft-col-logo">
+        <div class="ft-logo"><b>SUN</b>TECH</div>
+        <p class="ft-tagline">超高圧ウォータージェット工法専門<br>国内でも数少ない専業施工会社<br>日本ウォータージェット施工協会会員</p>
+        <div class="ft-tel">093-475-7263</div>
+        <div class="ft-tel-label">TEL（平日 8:00〜17:00）</div>
+        <div class="ft-addr">
+          福岡県北九州市八幡西区木屋瀬3丁目16番1号<br>
+          FAX：093-475-7368
+        </div>
+      </div>
+      <nav class="ft-col-nav">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="santech_top.html">トップページ</a></li>
+          <li><a href="santech_company.html">会社概要</a></li>
+          <li><a href="#">代表挨拶</a></li>
+          <li><a href="santech_company.html#overview">拠点・アクセス</a></li>
+          <li><a href="santech_recruit.html">採用情報</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col-nav">
+        <h4>TECHNOLOGY</h4>
+        <ul>
+          <li><a href="santech_technology.html">工法概要</a></li>
+          <li><a href="santech_technology.html#equipment">装置構成</a></li>
+          <li><a href="santech_technology.html#applications">コンクリート構造物</a></li>
+          <li><a href="santech_technology.html#applications">プラント・工場</a></li>
+        </ul>
+      </nav>
+      <nav class="ft-col-nav">
+        <h4>WORKS</h4>
+        <ul>
+          <li><a href="santech_施工事例.html">施工事例一覧</a></li>
+          <li><a href="santech_cases_suido.html">上下水道施設</a></li>
+          <li><a href="santech_cases_bridge.html">橋脚・橋梁</a></li>
+          <li><a href="santech_cases_ship.html">船・港湾</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 株式会社サンテック All Rights Reserved.</p>
+      <p class="ft-member">日本ウォータージェット施工協会会員</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* SCROLL REVEAL */
+const revIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('up');
+    revIO.unobserve(e.target);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(el => revIO.observe(el));
+
+/* ══ HAMBURGER MENU ══ */
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('navMobile');
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  navMobile.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => {
+  const isOpen = navMobile.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+</script>
+
+<!-- ══ MOBILE NAV OVERLAY ══ -->
+<nav class="nav-mobile" id="navMobile">
+  <a href="santech_top.html" onclick="closeMobileNav()">TOP</a>
+  <a href="santech_company.html" onclick="closeMobileNav()">COMPANY</a>
+  <a href="santech_technology.html" onclick="closeMobileNav()">TECHNOLOGY</a>
+  <a href="santech_施工事例.html" onclick="closeMobileNav()">WORKS</a>
+  <a href="santech_recruit.html" onclick="closeMobileNav()">RECRUIT</a>
+  <a href="santech_contact.html" class="nav-cta-m" onclick="closeMobileNav()">CONTACT</a>
+</nav>
+<!-- ══ MOBILE CONTACT BAR ══ -->
+<div class="mob-bar">
+  <a href="tel:0934757263" class="mob-bar-tel en">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    093-475-7263
+  </a>
+  <a href="mailto:info@santec-wj.jp" class="mob-bar-mail">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    メールで問い合わせ
+  </a>
+</div>
+
+</body>
+</html>
