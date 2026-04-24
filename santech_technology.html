@@ -1079,8 +1079,14 @@ const observer = new IntersectionObserver(entries=>{
       observer.unobserve(e.target);
     }
   });
-},{threshold:0.1});
+},{threshold:0, rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.rv,.rl,.rr').forEach(el=>observer.observe(el));
+/* フォールバック：ロード完了後にまだ非表示の要素を強制表示 */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.rv,.rl,.rr').forEach(el => el.classList.add('up'));
+  }, 600);
+});
 
 // 圧力バーアニメーション
 const barObserver = new IntersectionObserver(entries=>{

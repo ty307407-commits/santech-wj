@@ -617,8 +617,14 @@ footer{position:relative;overflow:hidden;background:#04090f;}
 // Scroll reveal
 const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');}});
-},{threshold:0.12});
+},{threshold:0, rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+/* フォールバック：ロード完了後にまだ非表示の要素を強制表示 */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.rv,.rl,.rr').forEach(el => el.classList.add('up'));
+  }, 600);
+});
 
 /* ══ HAMBURGER MENU ══ */
 const hamburger = document.getElementById('hamburger');

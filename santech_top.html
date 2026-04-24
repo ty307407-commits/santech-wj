@@ -903,6 +903,12 @@ const revIO = new IntersectionObserver(entries => {
   });
 }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
 document.querySelectorAll('.rv,.rl').forEach(el => revIO.observe(el));
+/* フォールバック：ロード完了後にまだ非表示の要素を強制表示 */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.rv,.rl').forEach(el => el.classList.add('up'));
+  }, 600);
+});
 
 /* ══ RING GAUGES + COUNTERS ══ */
 const ringIO = new IntersectionObserver(entries => {
