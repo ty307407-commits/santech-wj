@@ -176,21 +176,54 @@ body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);
 .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),rgba(56,189,248,0.3));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
 .svc:hover::after{transform:scaleX(1);}
 
-/* ══ WORKS film strip ══ */
-.works-sec{padding:88px 0 88px 52px;background:var(--navy);overflow:hidden;}
-.works-hd{max-width:1100px;margin:0 auto 40px;padding-right:52px;}
-.film{display:flex;gap:18px;overflow-x:auto;padding-right:52px;scrollbar-width:none;scroll-snap-type:x mandatory;cursor:grab;}
-.film:active{cursor:grabbing;}
-.film::-webkit-scrollbar{display:none;}
-.fc{flex:0 0 340px;border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/2;text-decoration:none;scroll-snap-align:start;background:#0a1628;}
-.fc img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
-.fc:hover img{transform:scale(1.06);}
-.fc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,48,0.85) 0%,transparent 55%);}
-.fc-body{position:absolute;bottom:0;left:0;right:0;padding:18px 20px;}
-.fc-cat{font-size:9px;color:var(--cyan);font-weight:700;letter-spacing:2px;margin-bottom:5px;}
-.fc-ttl{font-size:14px;font-weight:700;color:#fff;line-height:1.35;}
-.fc-loc{margin-top:7px;font-size:10px;color:rgba(255,255,255,0.38);}
-.works-more{max-width:1100px;margin:36px auto 0;padding:0 52px;text-align:center;}
+/* ══ WORKS / 最新施工事例 ══ */
+.works-sec{padding:88px 52px;background:var(--navy);overflow:hidden;}
+.works-hd{max-width:1100px;margin:0 auto 48px;}
+.works-more{max-width:1100px;margin:44px auto 0;text-align:center;}
+
+/* Featured card */
+.wk-featured{max-width:1100px;margin:0 auto 24px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;text-decoration:none;background:#0a1628;border:1px solid rgba(56,189,248,0.12);transition:border-color 0.25s,box-shadow 0.25s;}
+.wk-featured:hover{border-color:rgba(56,189,248,0.4);box-shadow:0 12px 48px rgba(56,189,248,0.1);}
+.wk-feat-img{position:relative;aspect-ratio:16/9;overflow:hidden;background:#060d1a;}
+.wk-feat-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.wk-featured:hover .wk-feat-img img{transform:scale(1.05);}
+.wk-feat-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(10,22,40,0.5));}
+.wk-feat-body{padding:36px 36px;display:flex;flex-direction:column;justify-content:center;gap:0;}
+.wk-new-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;}
+.wk-new-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.wk-new-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:3px;}
+.wk-feat-cat{font-size:10px;color:rgba(255,255,255,0.4);font-weight:600;letter-spacing:1.5px;margin-bottom:10px;}
+.wk-feat-ttl{font-size:clamp(16px,2vw,22px);font-weight:800;color:#fff;line-height:1.35;margin-bottom:16px;}
+.wk-feat-meta{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.wk-feat-row{display:flex;gap:10px;align-items:baseline;}
+.wk-feat-key{font-size:9px;color:rgba(255,255,255,0.35);font-weight:700;letter-spacing:1px;min-width:56px;}
+.wk-feat-val{font-size:12px;color:rgba(255,255,255,0.75);}
+.wk-feat-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:0.5px;}
+.wk-feat-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.2s;}
+.wk-featured:hover .wk-feat-link svg{transform:translateX(4px);}
+
+/* Sub grid */
+.wk-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.wk-card{border-radius:12px;overflow:hidden;text-decoration:none;background:#0a1628;border:1px solid rgba(56,189,248,0.08);transition:border-color 0.22s,transform 0.22s;}
+.wk-card:hover{border-color:rgba(56,189,248,0.3);transform:translateY(-3px);}
+.wk-card-img{position:relative;aspect-ratio:3/2;overflow:hidden;background:#060d1a;}
+.wk-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.wk-card:hover .wk-card-img img{transform:scale(1.06);}
+.wk-card-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,48,0.8) 0%,transparent 55%);}
+.wk-card-body{padding:16px 18px 18px;}
+.wk-card-cat{font-size:9px;color:var(--cyan);font-weight:700;letter-spacing:2px;margin-bottom:6px;}
+.wk-card-ttl{font-size:13px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:10px;}
+.wk-card-tags{display:flex;flex-wrap:wrap;gap:4px;}
+.wk-card-tag{font-size:9px;color:rgba(255,255,255,0.45);background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);padding:2px 8px;border-radius:4px;}
+.wk-coming{opacity:0.45;pointer-events:none;}
+
+@media(max-width:900px){
+  .wk-featured{grid-template-columns:1fr;}
+  .wk-feat-img{aspect-ratio:16/9;}
+  .wk-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:560px){.wk-grid{grid-template-columns:1fr;}}
 
 /* ══ FEATURES ══ */
 .feat-sec{padding:88px 0;background:var(--navy);overflow:hidden;}
@@ -583,20 +616,82 @@ footer{position:relative;overflow:hidden;background:#04090f;}
   </div>
 </section>
 
-<!-- ══ WORKS ══ -->
+<!-- ══ WORKS / 最新施工事例 ══ -->
 <section class="works-sec" id="works">
   <div class="works-hd rv">
-    <div class="sec-tag">WORKS</div>
-    <h2 class="sec-h" style="margin-bottom:0">施工事例</h2>
+    <div class="sec-tag">LATEST WORKS</div>
+    <h2 class="sec-h" style="margin-bottom:8px">最新施工事例</h2>
+    <p class="sec-p">現場から生まれた実績を、そのままお届けします。</p>
   </div>
-  <div class="film" id="film">
-    <a class="fc" href="santech_case_fukuoka.html"><img src="https://drive.google.com/thumbnail?id=1ROl-dFER7w0_XgMx62XUeOxa9AiZbZKg&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">新築建物・建築外壁</div><div class="fc-ttl">福岡銀行 南小倉支店<br>ハイブリッドピーリング工法</div><div class="fc-loc">📍 福岡県北九州市</div></div></a>
-    <a class="fc" href="santech_case_hiroshima.html"><img src="https://drive.google.com/thumbnail?id=12P02I28LSqLoOhWm56PNU8DZK0b2V7yo&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">新築建物・建築外壁</div><div class="fc-ttl">広島銀行<br>ハイブリッドピーリング工法</div><div class="fc-loc">📍 広島県</div></div></a>
-    <a class="fc" href="santech_cases_suido.html"><img src="https://drive.google.com/thumbnail?id=1YRz5w3VbNtmXu8vl3kKYiwMxu7DLLP2A&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">上下水道施設</div><div class="fc-ttl">上下水道施設<br>コンクリート洗浄</div><div class="fc-loc">📍 九州</div></div></a>
-    <a class="fc" href="santech_cases_bridge.html"><img src="https://drive.google.com/thumbnail?id=1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">橋脚・橋梁</div><div class="fc-ttl">橋脚コンクリート<br>表面処理</div><div class="fc-loc">📍 九州</div></div></a>
-    <a class="fc" href="santech_cases_ship.html"><img src="https://drive.google.com/thumbnail?id=1uWgfuo4r0lpatBcZeBfbzM84wzGd475K&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">船・港湾</div><div class="fc-ttl">船体洗浄・塗膜剥離</div><div class="fc-loc">📍 九州・沖縄</div></div></a>
-    <a class="fc" href="santech_cases_power.html"><img src="https://drive.google.com/thumbnail?id=1-f5_2sxezOsj8YRqjArw_X_YdSPZPpxv&sz=w600" alt="" onerror="this.style.background='#0a1628'"/><div class="fc-ov"></div><div class="fc-body"><div class="fc-cat">発電所</div><div class="fc-ttl">発電所設備<br>配管・構造物洗浄</div><div class="fc-loc">📍 九州</div></div></a>
+
+  <!-- Featured: 橋脚事例 -->
+  <a class="wk-featured rv" href="santech_case_bridge_001.html">
+    <div class="wk-feat-img">
+      <img src="https://drive.google.com/thumbnail?id=1GdDiMr3xbcyq5AknT8BKmBVnjLP5JFzc&sz=w800" alt="RC橋脚 塩害劣化層除去 超高圧ウォータージェット" onerror="this.style.display='none'">
+    </div>
+    <div class="wk-feat-body">
+      <div class="wk-new-badge">
+        <span class="wk-new-dot"></span>
+        <span class="wk-new-label">NEW CASE</span>
+      </div>
+      <div class="wk-feat-cat">橋脚・橋梁 / BRIDGE</div>
+      <div class="wk-feat-ttl">RC橋脚 塩害劣化層除去<br>超高圧ウォータージェット工法</div>
+      <div class="wk-feat-meta">
+        <div class="wk-feat-row"><span class="wk-feat-key">施工場所</span><span class="wk-feat-val">福岡県</span></div>
+        <div class="wk-feat-row"><span class="wk-feat-key">施工規模</span><span class="wk-feat-val">橋脚8基・約620㎡</span></div>
+        <div class="wk-feat-row"><span class="wk-feat-key">使用工法</span><span class="wk-feat-val">超高圧WJ工法（280MPa）</span></div>
+        <div class="wk-feat-row"><span class="wk-feat-key">工期</span><span class="wk-feat-val">約12日間</span></div>
+      </div>
+      <div class="wk-feat-link">詳細を見る <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+  </a>
+
+  <!-- Sub grid: ダミー3件 -->
+  <div class="wk-grid rv">
+    <a class="wk-card" href="santech_cases_ship.html">
+      <div class="wk-card-img">
+        <img src="https://drive.google.com/thumbnail?id=1uWgfuo4r0lpatBcZeBfbzM84wzGd475K&sz=w500" alt="船体洗浄・塗膜剥離" onerror="this.style.display='none'">
+        <div class="wk-card-img-ov"></div>
+      </div>
+      <div class="wk-card-body">
+        <div class="wk-card-cat">船舶 / SHIP</div>
+        <div class="wk-card-ttl">船体洗浄・塗膜剥離<br>超高圧WJ工法</div>
+        <div class="wk-card-tags">
+          <span class="wk-card-tag">塗膜剥離</span>
+          <span class="wk-card-tag">船舶</span>
+        </div>
+      </div>
+    </a>
+    <a class="wk-card" href="santech_cases_power.html">
+      <div class="wk-card-img">
+        <img src="https://drive.google.com/thumbnail?id=1-f5_2sxezOsj8YRqjArw_X_YdSPZPpxv&sz=w500" alt="発電所設備 配管洗浄" onerror="this.style.display='none'">
+        <div class="wk-card-img-ov"></div>
+      </div>
+      <div class="wk-card-body">
+        <div class="wk-card-cat">発電所 / POWER PLANT</div>
+        <div class="wk-card-ttl">発電所設備<br>配管・構造物内壁洗浄</div>
+        <div class="wk-card-tags">
+          <span class="wk-card-tag">スケール除去</span>
+          <span class="wk-card-tag">発電所</span>
+        </div>
+      </div>
+    </a>
+    <a class="wk-card" href="santech_cases_suido.html">
+      <div class="wk-card-img">
+        <img src="https://drive.google.com/thumbnail?id=1YRz5w3VbNtmXu8vl3kKYiwMxu7DLLP2A&sz=w500" alt="上下水道施設 コンクリート洗浄" onerror="this.style.display='none'">
+        <div class="wk-card-img-ov"></div>
+      </div>
+      <div class="wk-card-body">
+        <div class="wk-card-cat">上下水道 / WATERWORKS</div>
+        <div class="wk-card-ttl">上下水道施設<br>コンクリート内壁洗浄</div>
+        <div class="wk-card-tags">
+          <span class="wk-card-tag">内壁洗浄</span>
+          <span class="wk-card-tag">上下水道</span>
+        </div>
+      </div>
+    </a>
   </div>
+
   <div class="works-more rv">
     <a href="santech_施工事例.html" class="btn-main" style="display:inline-flex;">全施工事例を見る →</a>
   </div>
